@@ -1,2 +1,6 @@
 phaser/node_modules/*
 phaser.old/*
+*.7z
+phaser/tutorial/*
+*.tsx
+*.tmx
