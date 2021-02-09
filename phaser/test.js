@@ -8,7 +8,7 @@ var config = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { y: 150 },
+            gravity: { y: 300 },
             debug: false
         }
     },
@@ -20,7 +20,7 @@ var config = {
 };
 
 var maxSpeed = 75;
-var jumpSpeed = 100;
+var jumpSpeed = 150;
 var accel = 100;
 var friction = 0.5;
 var startRunVelocity = 30;
