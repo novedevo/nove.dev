@@ -1,6 +1,6 @@
 var config = {
     type: Phaser.WEBGL,
-    width: 128,
+    width: 512,
     height: 128,
     backgroundColor: '#2d2d2d',
     parent: 'phaser-example',
@@ -8,7 +8,7 @@ var config = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { y: 300 },
+            gravity: { y: 400 },
             debug: false
         }
     },
@@ -20,11 +20,11 @@ var config = {
 };
 
 var maxSpeed = 75;
-var jumpSpeed = 150;
-var accel = 100;
+var jumpSpeed = 175;
+var accel = 300;
 var friction = 0.5;
 var startRunVelocity = 30;
-var keysHeld = [];
+let hoverThreshold = 20;
 
 
 var game = new Phaser.Game(config);
@@ -70,17 +70,17 @@ function create() {
 
 function update(time, delta) {
 
-    if (controls.JustDown(cursors.left)){
+    if (controls.JustDown(cursors.left) && player.body.blocked.down){
         player.setVelocityX(-startRunVelocity);
     }
-    if (controls.JustDown(cursors.right)){
+    if (controls.JustDown(cursors.right) && player.body.blocked.down){
         player.setVelocityX(startRunVelocity);
     }
 
 
     if (cursors.left.isDown)
     {
-            if (Math.abs(player.body.velocity.x) > maxSpeed){
+            if (player.body.velocity.x < -maxSpeed){
                 player.setAccelerationX(0);
             }
             else {
@@ -90,7 +90,7 @@ function update(time, delta) {
     }
     else if (cursors.right.isDown)
     {
-        if (Math.abs(player.body.velocity.x) > maxSpeed){
+        if (player.body.velocity.x > maxSpeed){
             player.setAccelerationX(0);
         }
         else {
@@ -100,12 +100,17 @@ function update(time, delta) {
     else
     {
         player.setAccelerationX(0);
-        keysHeld = []
     }
 
-    if (cursors.up.isDown && player.body.blocked.down)
+    if (controls.JustDown(cursors.up) && player.body.blocked.down)
     {
         player.setVelocityY(-jumpSpeed);
+    }
+    if (Math.abs(player.body.velocity.y) < hoverThreshold && cursors.up.isDown){
+        player.body.setGravity(0,-200);
+    }
+    else{
+        player.body.setGravity(0,0);
     }
 
 }
