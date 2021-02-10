@@ -38,7 +38,7 @@ var accel = 300;
 var friction = 0.5;
 var startRunVelocity = 30;
 let hoverThreshold = 15;
-var drag = 0.5;
+var drag = 0.1;
 let dashSpeed = 250;
 
 let startPoint;
@@ -114,22 +114,22 @@ function update(time, delta) {
     if (dash) {
         if (dash.includes('left') && player.body.blocked.left) {
             dash = dash.replace('left', '');
-            player.body.setVelocityX(0);
+            //player.body.setVelocityX(0);
             if (dash) { return; }
         }
         else if (dash.includes('right') && player.body.blocked.right) {
             dash = dash.replace('right', '');
-            player.body.setVelocityX(0);
+            //player.body.setVelocityX(0);
             if (dash) { return; }
         }
         else if (dash.includes('up') && player.body.blocked.up) {
             dash = dash.replace('up', '');
-            player.body.setVelocityY(0);
+            //player.body.setVelocityY(0);
             if (dash) { return; }
         }
         else if (dash.includes('down') && player.body.blocked.down) {
             dash = dash.replace('down', '');
-            player.body.setVelocityY(0);
+            //player.body.setVelocityY(0);
             if (dash) { return; }
         }
         else if (player.body.position.distance(startPoint) < 40) {
@@ -137,8 +137,8 @@ function update(time, delta) {
             //console.log(player.body.position);
             return;
         }
-        player.body.velocity = oldVelocity;
-        player.body.allowDrag = true;
+        player.body.velocity = dashVelocities;
+        //player.body.allowDrag = true;
         player.body.setAllowGravity = true;
         dash = "";
         player.visible = true;
@@ -155,11 +155,11 @@ function update(time, delta) {
     }
 
     if (player.body.blocked.down) {
-        player.body.drag.x = drag / 100;
+        //player.body.drag.x = drag / 1000;
         dashable = true;
     }
     else {
-        player.body.drag.x = drag;
+        //player.body.drag.x = drag;
     }
 
 
@@ -168,8 +168,8 @@ function update(time, delta) {
 
 
         if (pad.left) {
-            if (!left && player.body.blocked.down) {
-                player.setVelocityX(-startRunVelocity);
+            if (/*!left && */player.body.blocked.down) {
+                player.setVelocityX(-maxSpeed);
             }
             else if (player.body.velocity.x < -maxSpeed) {
                 player.setAccelerationX(0);
@@ -181,8 +181,8 @@ function update(time, delta) {
             right = false;
         }
         else if (pad.right) {
-            if (!right && player.body.blocked.down) {
-                player.setVelocityX(startRunVelocity);
+            if (/*!right && */player.body.blocked.down) {
+                player.setVelocityX(maxSpeed);
             }
             else if (player.body.velocity.x > maxSpeed) {
                 player.setAccelerationX(0);
@@ -194,7 +194,7 @@ function update(time, delta) {
             left = false;
         }
         else {
-            player.setAccelerationX(0);
+            player.setVelocityX(0);
             left = false;
             right = false;
         }
