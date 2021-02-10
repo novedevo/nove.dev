@@ -1,3 +1,9 @@
 
-document.documentElement.setAttribute('data-theme', 'dark');
-console.log(document.documentElement.getAttribute('data-theme'));
+function changeTheme() {
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+}
