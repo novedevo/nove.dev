@@ -33,21 +33,30 @@ var config = {
 
 var maxFallSpeed = 150;
 var maxSpeed = 75;
-var jumpSpeed = 175;
+let jumpSpeed = 175;
+let shortJumpSpeed = 50;
 var accel = 300;
 var friction = 0.5;
 var startRunVelocity = 30;
 let hoverThreshold = 15;
 var drag = 0.1;
 let dashSpeed = 250;
+let dashDistance = 40;
+let maxWallSlide = 20;
+let smallJumpHeight = 30;
+
+
+let jumpStartPoint;
 
 let startPoint;
 let oldVelocity;
-let dash;
+let dash = '';
 
 let particles;
 let emitter;
+let dashSparkTimer;
 
+//let dashVelocities = new 
 
 
 var game = new Phaser.Game(config);
@@ -60,12 +69,28 @@ let a = false;
 let x = false;
 let dashable = true;
 
+let dashDirs = {
+    horz: false,
+    vert: false,
+}
+
 var pad = null;
+
+let dashVelocities = {
+    left: new Phaser.Math.Vector2(-maxSpeed, 0),
+    right: new Phaser.Math.Vector2(maxSpeed, 0),
+    up: new Phaser.Math.Vector2(0, -maxSpeed),
+    down: new Phaser.Math.Vector2(0, maxSpeed),
+    leftup: new Phaser.Math.Vector2(-maxSpeed, -maxSpeed),
+    rightup: new Phaser.Math.Vector2(maxSpeed, -maxSpeed),
+    leftdown: new Phaser.Math.Vector2(-maxSpeed, maxSpeed),
+    rightdown: new Phaser.Math.Vector2(maxSpeed, maxSpeed)
+}
 
 function preload() {
     this.load.image('tiles', 'assets/tiles.png');
     this.load.tilemapTiledJSON('map', 'assets/untitled.json');
-    this.load.spritesheet('heart', 'assets/heart.png', { frameWidth: 8, frameHeight: 8 });
+    this.load.spritesheet('heart', 'assets/heart.png', { frameWidth: 8, frameHeight: 8 }, 'heart.json');
     this.load.image('spark', 'assets/spark.png');
 }
 
@@ -112,67 +137,56 @@ function create() {
 function update(time, delta) {
 
     if (dash) {
-        if (dash.includes('left') && player.body.blocked.left) {
-            dash = dash.replace('left', '');
-            //player.body.setVelocityX(0);
-            if (dash) { return; }
-        }
-        else if (dash.includes('right') && player.body.blocked.right) {
-            dash = dash.replace('right', '');
-            //player.body.setVelocityX(0);
-            if (dash) { return; }
-        }
-        else if (dash.includes('up') && player.body.blocked.up) {
-            dash = dash.replace('up', '');
-            //player.body.setVelocityY(0);
-            if (dash) { return; }
-        }
-        else if (dash.includes('down') && player.body.blocked.down) {
-            dash = dash.replace('down', '');
-            //player.body.setVelocityY(0);
-            if (dash) { return; }
-        }
-        else if (player.body.position.distance(startPoint) < 40) {
-            //console.log((startPoint));
-            //console.log(player.body.position);
+        console.log(dash);
+        if (dashSparkTimer.getRemaining() != 0){
             return;
         }
-        player.body.velocity = dashVelocities;
-        //player.body.allowDrag = true;
-        player.body.setAllowGravity = true;
-        dash = "";
-        player.visible = true;
-        particles.destroy();
+        if (player.body.velocity.fuzzyEquals(Phaser.Math.Vector2.ZERO)
+            || player.body.position.distance(startPoint) > dashDistance) {
+            console.log(dash);
+            console.log(dashVelocities);
+            console.log(dashVelocities[dash]);
+            player.body.velocity = dashVelocities[dash].clone();
+            player.body.allowDrag = true;
+            player.body.allowGravity = true;
+            dash = "";
+            player.visible = true;
+            particles.destroy();
+            dashDirs['vert'] = false;
+            dashDirs['horz'] = false;
+        }
+        else{
+            return;
+        }
     }
 
     pad = this.input.gamepad.getPad(0);
 
     if (player.body.velocity.y > maxFallSpeed) {
-        player.body.setAllowGravity = true;
-    }
-    else {
-        player.body.setAllowGravity = true;
+        player.body.allowGravity = false;
     }
 
     if (player.body.blocked.down) {
-        //player.body.drag.x = drag / 1000;
+        
+        player.body.allowGravity = true;
+        player.body.drag.x = drag / 1000;
         dashable = true;
     }
     else {
-        //player.body.drag.x = drag;
+        player.body.drag.x = drag;
     }
 
 
     if (pad) {
-
-
-
         if (pad.left) {
-            if (/*!left && */player.body.blocked.down) {
+            if (!left && player.body.blocked.down) {
                 player.setVelocityX(-maxSpeed);
             }
             else if (player.body.velocity.x < -maxSpeed) {
                 player.setAccelerationX(0);
+            }
+            else if (player.body.blocked.left && player.body.velocity.y > maxWallSlide){
+                player.body.setVelocityY(maxWallSlide);
             }
             else {
                 player.setAccelerationX(-accel);
@@ -180,8 +194,9 @@ function update(time, delta) {
             left = true;
             right = false;
         }
+
         else if (pad.right) {
-            if (/*!right && */player.body.blocked.down) {
+            if (!right && player.body.blocked.down) {
                 player.setVelocityX(maxSpeed);
             }
             else if (player.body.velocity.x > maxSpeed) {
@@ -193,17 +208,28 @@ function update(time, delta) {
             right = true;
             left = false;
         }
+
         else {
-            player.setVelocityX(0);
+            player.setAccelerationX(0);
             left = false;
             right = false;
         }
 
-        if (!pad.A) {
+        if (a && !pad.A) {
+
+            if (player.body.velocity.y < -shortJumpSpeed){
+                player.body.velocity.y = -shortJumpSpeed;
+            }
+
             a = false;
+            player.body.allowGravity = true;
+            player.body.setGravity(0, 0);
+            //jumpStartPoint = null;
         }
 
+        //jump
         else if (!a && pad.A && player.body.blocked.down) {
+            //jumpStartPoint = player.body.position.clone();
             player.setVelocityY(-jumpSpeed);
             a = true;
             if (pad.left && player.body.velocity.x > -maxSpeed) {
@@ -213,44 +239,57 @@ function update(time, delta) {
                 player.setVelocityX(maxSpeed);
             }
         }
+        //midair hover
         else if (pad.A && Math.abs(player.body.velocity.y) < hoverThreshold) {
             player.body.setGravity(0, -200);
             a = true;
         }
         else {
+            player.body.allowGravity = true;
             player.body.setGravity(0, 0);
+            jumpStartPoint = null;
         }
 
+        //dash
         if (dashable && !x && pad.X && (pad.left || pad.right || pad.up || pad.down)) {
             startPoint = player.body.position.clone();
             player.body.allowDrag = false;
             oldVelocity = player.body.velocity.clone();
             player.body.setVelocityX(0).setVelocityY(0);
-            player.body.setAllowGravity = false;
+            player.body.allowGravity = false;
+
+
+            dashSparkTimer = this.time.addEvent({delay:150});
+
             if (pad.left) {
                 dash = 'left';
+                dashDirs['horz'] = true;
                 player.body.setVelocityX(-dashSpeed);
             }
             if (pad.right) {
                 dash = 'right';
+                dashDirs['horz'] = true;
                 player.body.setVelocityX(dashSpeed);
             }
             if (pad.up) {
                 dash += 'up';
+                dashDirs['vert'] = true;
                 player.body.setVelocityY(-dashSpeed);
             }
             if (pad.down) {
                 dash += 'down';
+                dashDirs['vert'] = true;
                 player.body.setVelocityY(dashSpeed);
             }
             x = true;
             dashable = false;
             player.visible = false;
             particles = this.add.particles('spark');
+            //dashSparkTimer = this.time.delayedCall(1000, particles.destroy(), [], this)
             emitter = particles.createEmitter({
-                speed:100,
-                frequency:0.001,
-                blend:'add'
+                speed: 100,
+                frequency: 0.001,
+                blend: 'add'
             });
             emitter.startFollow(player);
         }
