@@ -2,6 +2,11 @@
     font-family: 'Proxima Nova';
     src: local('Proxima Nova'), local('Proxima-Nova'), url('fonts/ProximaNova-Regular.otf');
 }
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('fonts/ProximaNova-Bold.otf');
+    font-weight: bold;
+}
 
 @font-face {
     font-family: 'Charter';
