@@ -42,8 +42,9 @@ let hoverThreshold = 15;
 var drag = 0.1;
 let dashSpeed = 250;
 let dashDistance = 40;
-let maxWallSlide = 20;
+let maxWallSlide = 40;
 let smallJumpHeight = 30;
+let wallJumpGracePeriod = 100; //ms
 
 
 let jumpStartPoint;
@@ -68,6 +69,9 @@ let right = false;
 let a = false;
 let x = false;
 let dashable = true;
+let wallSliding = false;
+
+let lastWallSlide = null;
 
 let dashDirs = {
     horz: false,
@@ -81,10 +85,10 @@ let dashVelocities = {
     right: new Phaser.Math.Vector2(maxSpeed, 0),
     up: new Phaser.Math.Vector2(0, -maxSpeed),
     down: new Phaser.Math.Vector2(0, maxSpeed),
-    leftup: new Phaser.Math.Vector2(-maxSpeed, -maxSpeed),
-    rightup: new Phaser.Math.Vector2(maxSpeed, -maxSpeed),
-    leftdown: new Phaser.Math.Vector2(-maxSpeed, maxSpeed),
-    rightdown: new Phaser.Math.Vector2(maxSpeed, maxSpeed)
+    upleft: new Phaser.Math.Vector2(-maxSpeed, -maxSpeed),
+    upright: new Phaser.Math.Vector2(maxSpeed, -maxSpeed),
+    downleft: new Phaser.Math.Vector2(-maxSpeed, maxSpeed),
+    downright: new Phaser.Math.Vector2(maxSpeed, maxSpeed)
 }
 
 function preload() {
@@ -138,11 +142,14 @@ function update(time, delta) {
 
     if (dash) {
         console.log(dash);
-        if (dashSparkTimer.getRemaining() != 0){
+        if (dashSparkTimer.getRemaining() != 0) {
             return;
         }
         if (player.body.velocity.fuzzyEquals(Phaser.Math.Vector2.ZERO)
             || player.body.position.distance(startPoint) > dashDistance) {
+
+            player.visible = true;
+            particles.destroy();
             console.log(dash);
             console.log(dashVelocities);
             console.log(dashVelocities[dash]);
@@ -150,12 +157,10 @@ function update(time, delta) {
             player.body.allowDrag = true;
             player.body.allowGravity = true;
             dash = "";
-            player.visible = true;
-            particles.destroy();
             dashDirs['vert'] = false;
             dashDirs['horz'] = false;
         }
-        else{
+        else {
             return;
         }
     }
@@ -167,7 +172,7 @@ function update(time, delta) {
     }
 
     if (player.body.blocked.down) {
-        
+
         player.body.allowGravity = true;
         player.body.drag.x = drag / 1000;
         dashable = true;
@@ -179,23 +184,34 @@ function update(time, delta) {
 
     if (pad) {
         if (pad.left) {
+            facing = 'left';
             if (!left && player.body.blocked.down) {
                 player.setVelocityX(-maxSpeed);
             }
             else if (player.body.velocity.x < -maxSpeed) {
                 player.setAccelerationX(0);
             }
-            else if (player.body.blocked.left && player.body.velocity.y > maxWallSlide){
-                player.body.setVelocityY(maxWallSlide);
-            }
             else {
                 player.setAccelerationX(-accel);
             }
             left = true;
             right = false;
+
+            if (player.body.blocked.left && player.body.velocity.y > maxWallSlide) {
+                player.body.setVelocityY(maxWallSlide);
+                wallSliding = true;
+                lastWallSlide = 'left';
+            }
+            else {
+                if (wallSliding){
+                    wallGrace = this.time.addEvent({ delay: wallJumpGracePeriod })
+                }
+                wallSliding = false;
+            }
         }
 
         else if (pad.right) {
+            facing = 'right'
             if (!right && player.body.blocked.down) {
                 player.setVelocityX(maxSpeed);
             }
@@ -207,6 +223,18 @@ function update(time, delta) {
             }
             right = true;
             left = false;
+
+            if (player.body.blocked.right && player.body.velocity.y > maxWallSlide) {
+                player.body.setVelocityY(maxWallSlide);
+                wallSliding = true;
+                lastWallSlide = 'right';
+            }
+            else {
+                if (wallSliding){
+                    wallGrace = this.time.addEvent({ delay: wallJumpGracePeriod })
+                }
+                wallSliding = false;
+            }
         }
 
         else {
@@ -217,7 +245,7 @@ function update(time, delta) {
 
         if (a && !pad.A) {
 
-            if (player.body.velocity.y < -shortJumpSpeed){
+            if (player.body.velocity.y < -shortJumpSpeed) {
                 player.body.velocity.y = -shortJumpSpeed;
             }
 
@@ -239,6 +267,20 @@ function update(time, delta) {
                 player.setVelocityX(maxSpeed);
             }
         }
+
+        //walljump
+        else if (!a && pad.A && (wallSliding || wallGrace.getRemaining() != 0)) {
+            if (lastWallSlide === 'left') {
+                player.setVelocityY(-jumpSpeed);
+                player.setVelocityX(maxSpeed);
+                a = true;
+            }
+            else if (lastWallSlide === 'right') {
+                player.setVelocityY(-jumpSpeed);
+                player.setVelocityX(-maxSpeed);
+                a = true;
+            }
+        }
         //midair hover
         else if (pad.A && Math.abs(player.body.velocity.y) < hoverThreshold) {
             player.body.setGravity(0, -200);
@@ -251,41 +293,60 @@ function update(time, delta) {
         }
 
         //dash
-        if (dashable && !x && pad.X && (pad.left || pad.right || pad.up || pad.down)) {
+        if (dashable && !x && pad.X && (facing || pad.up || pad.down)) {
             startPoint = player.body.position.clone();
             player.body.allowDrag = false;
             oldVelocity = player.body.velocity.clone();
             player.body.setVelocityX(0).setVelocityY(0);
             player.body.allowGravity = false;
+            player.body.setAccelerationX(0).setVelocityY(0);
 
 
-            dashSparkTimer = this.time.addEvent({delay:150});
+            dashSparkTimer = this.time.addEvent({ delay: 150 });
 
-            if (pad.left) {
-                dash = 'left';
-                dashDirs['horz'] = true;
-                player.body.setVelocityX(-dashSpeed);
-            }
-            if (pad.right) {
-                dash = 'right';
-                dashDirs['horz'] = true;
-                player.body.setVelocityX(dashSpeed);
-            }
             if (pad.up) {
                 dash += 'up';
                 dashDirs['vert'] = true;
                 player.body.setVelocityY(-dashSpeed);
             }
-            if (pad.down) {
+            else if (pad.down) {
                 dash += 'down';
                 dashDirs['vert'] = true;
                 player.body.setVelocityY(dashSpeed);
             }
+            if (facing === 'left') {
+                if (!dash) {
+                    dash += 'left';
+                    dashDirs['horz'] = true;
+                    player.body.setVelocityX(-dashSpeed);
+                }
+                else {
+                    if (pad.left) {
+                        dash += 'left';
+                        dashDirs['horz'] = true;
+                        player.body.setVelocityX(-dashSpeed);
+                    }
+                }
+            }
+            if (facing === 'right') {
+                if (!dash) {
+                    dash += 'right';
+                    dashDirs['horz'] = true;
+                    player.body.setVelocityX(dashSpeed);
+                }
+                else {
+                    if (pad.right) {
+                        dash += 'right';
+                        dashDirs['horz'] = true;
+                        player.body.setVelocityX(dashSpeed);
+                    }
+                }
+            }
+
             x = true;
             dashable = false;
             player.visible = false;
             particles = this.add.particles('spark');
-            //dashSparkTimer = this.time.delayedCall(1000, particles.destroy(), [], this)
             emitter = particles.createEmitter({
                 speed: 100,
                 frequency: 0.001,
@@ -302,12 +363,6 @@ function update(time, delta) {
 
     }
     else {
-
-        // if (pad.axes.length) {
-        //     player.setAccelerationX(pad.axes[0].getValue()*accel);
-        //     //console.log(pad.axes[0].getValue()*accel);
-        //     //console.log(player.body.acceleration)
-        // }
 
 
         if (controls.JustDown(cursors.left) && player.body.blocked.down) {
