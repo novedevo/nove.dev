@@ -1,85 +1,55 @@
-<!DOCTYPE html>
-<html lang="en-CA">
+---
+layout: default
+title: Devon Sawatsky Burnham
+description:"Devon's personal website, featuring a selection of their personal coding projects and development
+experiments."
+---
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Devon Sawatsky Burnham">
-    <meta name="description" content="Devon's personal website, featuring 
-        a selection of their personal coding projects and development experiments.">
+<h1 id="home">Devon Sawatsky Burnham</h1>
 
-    <!-- generic favicons -->
-    <link rel="icon" href="favicons/favicon-16.png" sizes="16x16">
-    <link rel="icon" href="favicons/favicon-32.png" sizes="32x32">
-    <link rel="icon" href="favicons/favicon-64.png" sizes="64x64">
-    <link rel="icon" href="favicons/favicon-128.png" sizes="128x128">
-    <link rel="icon" href="favicons/favicon-180.png" sizes="180x180">
-    <link rel="icon" href="favicons/favicon-192.png" sizes="192x192">
+<div class="main">
+    <h2 id="about">About Me</h2>
+    <p>I'm a computer engineering student at <a href="https://sfu.ca/" title="SFU">Simon Fraser
+            University</a>.
+        My interests include music, hiking, coding and video games. My preferred language is Python, and I use VS
+        Code and IntelliJ IDEA.
+        My passion projects include game design and development using Phaser, home network architecture in the
+        <a href="https://unifi-network.ui.com/" title="Unifi">Unifi</a> ecosystem, and home server
+        architecture
+        under FreeBSD (soon to be Debian) with <a href="https://www.truenas.com/" title="TrueNAS">TrueNAS</a>.
+        I'm currently taking a course on data structures and algorithms using Java, and I have experience in C, C++,
+        Python, HTML/CSS/JS,
+        and hardware design using VHDL and Quartus.
+    </p>
 
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <h2 id="projects">Projects</h2>
+    <p>The code for most of my work can be found on my <a href="https://github.com/novedevo">GitHub</a>.
+    </p>
+    <p>Any classes that I took in university have repos there, however some cannot be public due to instructor
+        concerns
+        about academic honesty.
+        This includes courses on C++, Java, and VHDL. If you're interested in reading over my coursework, <a
+            href="#contact">contact me</a>!
+    </p>
+    <p>Some of this is also hosted on this website: </p>
+    <ul>
+        <li>This website itself. You found it! GitHub: <a
+                href="https://github.com/novedevo/novedevo.github.io">website</a></li>
+        <li>HTML5 video game development using the Phaser framework. This is a rapidly evolving project as
+            I learn more about game design and JavaScript. Hosted at <a
+                href="phaser/level1.html">nove.dev/phaser/phaser.html</a>.
+            GitHub: <a href="https://github.com/novedevo/novedevo.github.io/tree/master/phaser">phaser</a></li>
+    </ul>
 
-    <title>Devon Sawatsky Burnham</title>
-</head>
+    <h2 id="recruiting">Hire Me</h2>
+    <p>I'm available for hire as an intern, and I'm currently seeking placement through SFU's co-op program.
+        If you're interested in hiring me, my résumé is available <a class="broken-link"
+            href="documents/resume.pdf">here</a>,
+        or you can contact me <a href="#contact">below</a>.</p>
 
-<body>
-    <div class="top-bar">
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="#recruiting">Hire Me</a>
-            <a href="#contact">Contact Me</a>
-            <a href="/demos/demos.html/">Demos</a>
-        </nav>
-        <button id='theme-toggle' onclick="changeTheme()"><strong>Switch Themes</strong></button>
-    </div>
-
-    <h1 id="home">Devon Sawatsky Burnham</h1>
-
-    <div class="main">
-        <h2 id="about">About Me</h2>
-        <p>I'm a computer engineering student at <a href="https://sfu.ca/" title="SFU">Simon Fraser
-                University</a>.
-            My interests include music, hiking, coding and video games. My preferred language is Python, and I use VS
-            Code and IntelliJ IDEA.
-            My passion projects include game design and development using Phaser, home network architecture in the
-            <a href="https://unifi-network.ui.com/" title="Unifi">Unifi</a> ecosystem, and home server
-            architecture
-            under FreeBSD (soon to be Debian) with <a href="https://www.truenas.com/" title="TrueNAS">TrueNAS</a>.
-            I'm currently taking a course on data structures and algorithms using Java, and I have experience in C, C++,
-            Python, HTML/CSS/JS,
-            and hardware design using VHDL and Quartus.
-        </p>
-
-        <h2 id="projects">Projects</h2>
-        <p>The code for most of my work can be found on my <a href="https://github.com/novedevo">GitHub</a>.
-        </p>
-        <p>Any classes that I took in university have repos there, however some cannot be public due to instructor
-            concerns
-            about academic honesty.
-            This includes courses on C++, Java, and VHDL. If you're interested in reading over my coursework, <a
-                href="#contact">contact me</a>!
-        </p>
-        <p>Some of this is also hosted on this website: </p>
-        <ul>
-            <li>This website itself. You found it! GitHub: <a href="https://github.com/novedevo/novedevo.github.io">website</a></li>
-            <li>HTML5 video game development using the Phaser framework. This is a rapidly evolving project as
-                I learn more about game design and JavaScript. Hosted at <a href="phaser/level1.html">nove.dev/phaser/phaser.html</a>.
-                GitHub: <a href="https://github.com/novedevo/novedevo.github.io/tree/master/phaser">phaser</a></li>
-        </ul>
-
-        <h2 id="recruiting">Hire Me</h2>
-        <p>I'm available for hire as an intern, and I'm currently seeking placement through SFU's co-op program.
-            If you're interested in hiring me, my résumé is available <a class="broken-link" href="documents/resume.pdf">here</a>,
-            or you can contact me <a href="#contact">below</a>.</p>
-
-        <h2 id="contact">Contact Me</h2>
-        <ul class="contact">
-            <li>Email: <a href="mailto:devon@nove.dev" target="_blank">devon@nove.dev</a></li>
-            <li><a href="https://www.linkedin.com/in/devon-burnham-7602751a5/" target="_blank">LinkedIn profile</a></li>
-        </ul>
-    </div>
-</body>
-
-</html>
+    <h2 id="contact">Contact Me</h2>
+    <ul class="contact">
+        <li>Email: <a href="mailto:devon@nove.dev" target="_blank">devon@nove.dev</a></li>
+        <li><a href="https://www.linkedin.com/in/devon-burnham-7602751a5/" target="_blank">LinkedIn profile</a></li>
+    </ul>
+</div>
