@@ -419,8 +419,10 @@ function frictionCalc(velocity) {
 }
 
 
-document.querySelector('button').addEventListener('click', function() {
-    soundtrack.resume().then(() => {
-      console.log('Playback resumed successfully');
-    });
+document.querySelector('#play-button').addEventListener('click', function() {
+    soundtrack.resume();
+  });
+
+document.querySelector('#pause-button').addEventListener('click', function() {
+    soundtrack.pause();
   });
