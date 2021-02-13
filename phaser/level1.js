@@ -30,6 +30,7 @@ var config = {
     }
 };
 
+let soundtrack;
 
 var maxFallSpeed = 150;
 var maxSpeed = 75;
@@ -106,7 +107,8 @@ function create() {
 
     var tile_layer = map.createLayer(0, tileset, 0, 0);
 
-    let soundtrack = this.sound.add('soundtrack', {loop: true})
+    soundtrack = this.sound.add('soundtrack', {loop: true})
+    soundtrack.play();
 
     //var map = this.make.tilemap({ key: 'map', tileWidth: 16, tileHeight: 16 });
     //var tileset = map.addTilesetImage("tileset-images", 'tiles');
@@ -415,3 +417,10 @@ function frictionCalc(velocity) {
     return -friction * velocity;
 
 }
+
+
+document.querySelector('button').addEventListener('click', function() {
+    soundtrack.resume().then(() => {
+      console.log('Playback resumed successfully');
+    });
+  });
