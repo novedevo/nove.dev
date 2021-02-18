@@ -14,10 +14,6 @@
     src: local('Charter'), local('Charter'), url('fonts/Charter-Regular.otf');
 }
 
-/* html {
-    font-size: 1.1vw;
-} */
-
 html {
     --background-color: aliceblue;
     --navbar-button-color: #d5dae3;
@@ -75,7 +71,8 @@ body {
 
 .main {
     max-width: 800px;
-    margin: 12px;
+    margin: 0 auto;
+    padding: 12px
 }
 
 .top-bar {
@@ -138,6 +135,28 @@ button:hover, button:focus {
     display: none;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+
+footer {
+    font-family: 'Proxima Nova';
+    line-height: 1.6;
+    font-size: 0.9rem;
+    display: flex;
+    background-color: var(--navbar-button-color);
+    flex-shrink: 0;
+    margin: 0px;
+    padding: 12px;
+    justify-content: center;
+}
+
+.footer-item {
+    margin: 12px;
+}
+
 @media only screen and (max-width: 400px) {
     .top-bar>button>svg {
         display: block;
@@ -172,29 +191,7 @@ button:hover, button:focus {
         margin: 0px;
         padding: 0px;
     }
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    margin: 0px;
-}
-
-.content {
-    flex: 1 0 auto;
-}
-
-footer {
-    font-family: 'Proxima Nova';
-    line-height: 1.6;
-    font-size: 0.9rem;
-    display: flex;
-    background-color: var(--navbar-button-color);
-    flex-shrink: 0;
-    margin: 0px;
-    padding: 12px;
-}
-
-.footer-item {
-    margin: 12px;
+    footer {
+        display: block;
+    }
 }
