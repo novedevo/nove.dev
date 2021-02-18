@@ -112,6 +112,7 @@ button:hover, button:focus {
 
 .broken-link {
     text-decoration: line-through;
+    cursor:not-allowed;
 }
 
 @media only screen and (max-width: 768px) {
