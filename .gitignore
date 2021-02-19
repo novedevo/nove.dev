@@ -10,7 +10,4 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
-phaser/assets/heart.png:Zone.Identifier
-phaser/assets/soundtrack.opus:Zone.Identifier
-phaser/assets/heart.pngZone.Identifier
 *.Identifier
