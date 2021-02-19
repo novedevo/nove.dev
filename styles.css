@@ -69,7 +69,7 @@ body {
     height: 100%;
 }
 
-.main {
+.content {
     max-width: 800px;
     margin: 0 auto;
     padding: 12px
@@ -167,7 +167,7 @@ footer {
 }
 
 @media only screen and (max-width: 568px) {
-    .main {
+    .content {
         hyphens: auto;
     }
     .top-bar {
