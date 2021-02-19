@@ -1,5 +1,5 @@
 
-var gravity = 400;
+var gravity = 800;
 
 var config = {
     type: Phaser.WEBGL,
@@ -34,8 +34,8 @@ let soundtrack;
 
 var maxFallSpeed = 150;
 var maxSpeed = 75;
-let jumpSpeed = 175;
-let shortJumpSpeed = 50;
+let jumpSpeed = 250;
+let shortJumpSpeed = jumpSpeed/3;
 var accel = 300;
 var friction = 0.5;
 var startRunVelocity = 30;
@@ -46,6 +46,10 @@ let dashDistance = 40;
 let maxWallSlide = 40;
 let smallJumpHeight = 30;
 let wallJumpGracePeriod = 100; //ms
+let wallJumpForcedPeriod = 70; //ms
+
+let forceHoldRight = false;
+let forceHoldLeft = false;
 
 
 let jumpStartPoint;
@@ -71,6 +75,7 @@ let a = false;
 let x = false;
 let dashable = true;
 let wallSliding = false;
+let wallGrace = false;
 
 let lastWallSlide = null;
 
@@ -188,7 +193,7 @@ function update(time, delta) {
 
 
     if (pad) {
-        if (pad.left) {
+        if (pad.left || (forceHoldLeft && forceHoldLeft.getRemaining() != 0)) {
             facing = 'left';
             if (!left && player.body.blocked.down) {
                 player.setVelocityX(-maxSpeed);
@@ -215,7 +220,7 @@ function update(time, delta) {
             }
         }
 
-        else if (pad.right) {
+        else if (pad.right || (forceHoldRight && forceHoldRight.getRemaining() != 0)) {
             facing = 'right'
             if (!right && player.body.blocked.down) {
                 player.setVelocityX(maxSpeed);
@@ -236,7 +241,7 @@ function update(time, delta) {
             }
             else {
                 if (wallSliding){
-                    wallGrace = this.time.addEvent({ delay: wallJumpGracePeriod })
+                    wallGrace = this.time.addEvent({ delay: wallJumpGracePeriod });
                 }
                 wallSliding = false;
             }
@@ -274,16 +279,18 @@ function update(time, delta) {
         }
 
         //walljump
-        else if (!a && pad.A && (wallSliding || wallGrace.getRemaining() != 0)) {
+        else if (!a && pad.A && (wallSliding || (wallGrace && wallGrace.getRemaining() != 0))) {
             if (lastWallSlide === 'left') {
                 player.setVelocityY(-jumpSpeed);
                 player.setVelocityX(maxSpeed);
                 a = true;
+                forceHoldRight = this.time.addEvent({ delay: wallJumpForcedPeriod });
             }
             else if (lastWallSlide === 'right') {
                 player.setVelocityY(-jumpSpeed);
                 player.setVelocityX(-maxSpeed);
                 a = true;
+                forceHoldLeft = this.time.addEvent({ delay: wallJumpForcedPeriod });
             }
         }
         //midair hover
