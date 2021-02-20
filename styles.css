@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Futura';
-    src: local(Futura), url("https://cdn.jsdelivr.net/npm/futura-font@1.0.0/FuturaBT-Book.woff");
+    src: local(Futura), url("fonts/FuturaLT.ttf");
 }
 
 @font-face {
     font-family: 'Futura';
-    src: local("Futura 700"), url("https://github.com/danielmouraa/CFH-Esportes/blob/master/fonts/Futura-Bold.otf");
+    src: local("Futura-Bold"), url("fonts/FuturaLT-Bold.ttf");
     font-weight: 700;
 }
 
