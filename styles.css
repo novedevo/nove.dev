@@ -35,12 +35,12 @@ body {
     background-color: var(--background-color);
 }
 
-h1, h2, nav, footer, .top-bar {
+h1, h2, h3, nav, footer, .top-bar {
     font-family: Futura, "Proxima Nova", "Century Gothic", sans-serif;
     color: var(--accent-color);
 }
 
-main>p, main>ul {
+main>p, main>ul, aside {
     font-family: Charter, serif;
     line-height: 1.6;
     font-size: 1.1rem;
@@ -240,4 +240,22 @@ footer {
     footer {
         display: block;
     }
+}
+
+/* Stickifying the footer */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+footer {
+    flex-shrink: 0;
 }
