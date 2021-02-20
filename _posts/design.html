@@ -1,0 +1,63 @@
+---
+layout: default
+title: Design Choices & Decisions
+description: Explanation and justification behind all the choices that I consciously made for this website.
+permalink: /design
+---
+
+<h2>Fonts</h2>
+<h3>Futura</h3>
+<aside>Futura is one of the most recognizable fonts on the planet. It was initially designed by Paul Renner in 1920's
+    Germany, following Bauhaus principles. Futura was the first font to touchdown on a celestial body besides Earth
+    when it was used on the plaque carried by Apollo 11. It has a history of use in films by such directors as Stanley
+    Kubrick and Wes Anderson.</aside>
+<p>
+    I use Futura for headings and accent text. This is something of a controversial decision, as various designers
+    and typography experts have contradictory opinions on the use of this font on today's web. I stand by my choice for
+    a simple reason: I like the font! It's beautiful to my eyes, I love the sharp points and geometric purity, and it's
+    one of the few fonts that can stand on its own as a 300px full-width main header. It's not especially legible for
+    body text, so don't use it for that. Instead, I might use...
+</p>
+
+<h3>Proxima Nova</h3>
+<aside>Proxima Nova was created by typographer Mark Simonson in 2005, and takes inspiration from Helvetica, Futura, and
+    Akzidenz Grotesk, among others. It's designed with body-text legibility in mind, and incorporates modern type design
+    very effectively, including features such as fractions, ligatures, and ordinals.</aside>
+<p>Proxima Nova is a delightful font, and is typically my first port of call when I need a sans-serif body font. It
+    loses some legibility at small sizes on low-DPI screens, but my designs usually don't require that. This is the font
+    used for most text on my résumé. For longer pieces of writing (such as this one), however, I prefer a serifed font,
+    such as...
+</p>
+
+<h3>Charter</h3>
+<p>Charter was specifically designed for use in fax machines, which have a lower DPI than the 300 typically used in
+    screenprinting at that time. Since many desktop monitors have a significantly lower DPI than 300 (although a typical
+    phone easily surpasses this), Charter holds up remarkably well as a screen font. I find that serifs improve
+    legibility at smaller point sizes, as well as for those with visual impairments (I strive to run a highly accessible
+    site for all. I use HTML5's semantics to maintain structure for screenreaders and keep my colour palettes
+    high-contrast (and <a class=broken-link future-href="/colour-themes">customizable</a>!) If you have a disability,
+    and you find my website especially difficult to browse, I would greatly appreciate you contacting me at
+    {{site.email-link}}).
+</p>
+
+<h2>Colours</h2>
+<p>I make no claims about being a preëminent colour scientist. As such, I'll delegate this to the experts. My main
+    accent colour is cmyk(0, 100, 0, 0), because it prints perfectly on poor (process) printers and paper, in the same
+    manner a spot colour might in a professional printer's shop. Magenta was chosen because it's contrasty and
+    interesting against a paper-white background. Pure cyan is too eye-bleedingly vivid, and pure yellow is an obvious
+    non-starter. For the website, I've adapted it slightly, as RGB magenta isn't a very attractive colour on the web.
+    This isn't a problem as the backdrop is no longer the blinding white of printer paper, and (hopefully) no one is
+    printing out my website, so the issues with process colour have been elided.
+</p>
+<h3>Solarized</h3>
+<aside>Solarized is the product of Ethan Schoonover, who has a detailed
+    <a href="https://ethanschoonover.com/solarized/">writeup</a> on the various calculations he's made to ensure the
+    optimal colours possible. With my limited understanding of colour science and theory, it seems accurate and
+    methodical.
+</aside>
+<p>Solarized (Dark) is my preferred colour scheme for most applications. My terminals, code editors, and browsers use
+    it. I even have a <a href="https://darkreader.org/">Chrome extension</a> that tries its best to convert the rest of
+    the web to my solarized will. The light theme feels too yellowed for my taste, but the dark theme is exquisite, and
+    I use sample colours from it for the default dark theme on my website. The full dark and light modes are also
+    available on the <a class=broken-link future-href="/colour-themes">customization</a> page.
+</p>
