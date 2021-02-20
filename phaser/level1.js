@@ -299,7 +299,10 @@ function update(time, delta) {
             a = true;
         }
         else {
-            player.body.allowGravity = true;
+            if (!(player.body.velocity.y > maxFallSpeed)){
+                player.body.allowGravity = true;
+            }
+            
             player.body.setGravity(0, 0);
             jumpStartPoint = null;
         }
