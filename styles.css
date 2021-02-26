@@ -38,10 +38,11 @@ body {
     background-color: var(--background-color);
 }
 
-h1, h2, h3, nav, footer, .top-bar {
+h1, h2, h3, nav, .top-bar {
     font-family: 'Architype Renner';
     color: var(--accent-color);
 }
+
 
 .ss01 {
     font-feature-settings:"ss01";
@@ -60,12 +61,16 @@ code {
     padding: 1px 3px;
 }
 
-main>p, main>ul, aside {
-    font-family: "Fira Sans", Fira, Inter, Helvetica, Arial, sans-serif;
+main>p, main>ul, aside, footer {
+    font-family: Inter, "Fira Sans", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.8;
     font-size: 1.2rem;
     color: var(--text-color);
     letter-spacing: 0.1px;
+}
+
+footer {
+    color: var(--accent-color);
 }
 
 h1 {
