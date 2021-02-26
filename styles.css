@@ -1,14 +1,15 @@
 @font-face {
-    font-family: 'Futura';
-    src: local(Futura), url("fonts/FuturaLT.ttf");
+    font-family: 'Architype Renner';
+    src: local('Architype Renner'), url("fonts/ArchitypeRenner-Regular.otf");
     font-display: swap;
+    /* font-variant-alternates: character-variant('a'1); */
 }
 
 @font-face {
-    font-family: 'Futura';
-    src: local("Futura-Bold"), url("fonts/FuturaLT-Bold.ttf");
-    font-weight: 700;
+    font-family: 'Architype Renner';
+    src: local('Architype Renner Demi'), url("fonts/ArchitypeRenner-Demi.otf");
     font-display: swap;
+    font-weight: 700;
 }
 
 p {
@@ -38,8 +39,15 @@ body {
 }
 
 h1, h2, h3, nav, footer, .top-bar {
-    font-family: Futura, "Proxima Nova", "Century Gothic", sans-serif;
+    font-family: 'Architype Renner';
     color: var(--accent-color);
+}
+
+.ss01 {
+    font-feature-settings:"ss01";
+}
+.ss03 {
+    font-feature-settings:"ss03";
 }
 
 code {
@@ -54,15 +62,16 @@ code {
 
 main>p, main>ul, aside {
     font-family: "Fira Sans", Fira, Inter, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    font-size: 1.1rem;
+    line-height: 1.8;
+    font-size: 1.2rem;
     color: var(--text-color);
+    letter-spacing: 0.1px;
 }
 
 h1 {
     font-weight: normal;
-    font-size: 60px;
-    margin: 50px auto;
+    font-size: 100px;
+    margin: 50px auto 20px;
     text-align: center;
 }
 
@@ -130,7 +139,7 @@ body {
     height: 100%;
 }
 
-.content {
+main {
     max-width: 800px;
     margin: 0 auto;
     padding: 12px
@@ -143,7 +152,7 @@ body {
     padding: 12px;
     padding-top: 0px;
     line-height: 1;
-    font-size: 0.9rem;
+    font-size: 1.1rem;
 }
 
 nav {
@@ -223,19 +232,14 @@ footer {
     margin: 12px;
 }
 
-@media only screen and (max-width: 400px) {
-    .top-bar>button>svg {
-        display: block;
-    }
-    .top-bar>button>.switch-themes {
-        display: none;
-    }
-    .notfound-header {
-        font-size: 100px;
+@media only screen and (max-width: 1100px) {
+    h1 {
+        font-size: 60px;
     }
 }
 
-@media only screen and (max-width: 568px) {
+
+@media only screen and (max-width: 600px) {
     .content {
         hyphens: auto;
     }
@@ -257,13 +261,26 @@ footer {
         border-bottom-right-radius: 10px;
     }
     h1 {
-        margin: 25px auto;
+        margin: 25px auto -30px;
         font-size: 35px;
     }
     footer {
         display: block;
     }
 }
+
+@media only screen and (max-width: 400px) {
+    .top-bar>button>svg {
+        display: block;
+    }
+    .top-bar>button>.switch-themes {
+        display: none;
+    }
+    .notfound-header {
+        font-size: 100px;
+    }
+}
+
 
 /* Stickifying the footer */
 
