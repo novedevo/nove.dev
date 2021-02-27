@@ -52,7 +52,7 @@ h1, h2, h3, nav, .top-bar {
 }
 
 code {
-    font-family: 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Inconsolata', monospace;
+    font-family: 'Fira Code', 'Fira Mono', 'Roboto Mono', 'Inconsolata', 'Jetbrains Mono', monospace;
     line-height: 1.6;
     font-size: 1rem;
     color: var(--text-color);
@@ -64,9 +64,9 @@ code {
 main>p, main>ul, aside, footer {
     font-family: Inter, "Fira Sans", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.8;
-    font-size: 1.2rem;
+    font-size: 20px;
     color: var(--text-color);
-    letter-spacing: 0.1px;
+    letter-spacing: -0.017em;
 }
 
 footer {
@@ -78,6 +78,7 @@ h1 {
     font-size: 100px;
     margin: 50px auto 20px;
     text-align: center;
+    letter-spacing: -0.02em;
 }
 
 .notfound-header {

@@ -5,24 +5,35 @@ description: Explanation and justification behind all the choices that I conscio
 permalink: /design
 ---
 
-<h1>Design</h1>
+<h1>Desi<span class="ss01">gn</span></h1>
 
 <h2>Fonts</h2>
 <hr>
-<h3>Futura</h3>
+<h3>Architype Renner</h3>
 <aside>Futura is one of the most recognizable fonts on the planet. It was initially designed by Paul Renner in 1920's
     Germany, following Bauhaus principles. Futura was the first font to touchdown on a celestial body besides Earth
     when it was used on the plaque carried by Apollo 11. It has a history of use in films by such directors as Stanley
     Kubrick and Wes Anderson.</aside>
 <p>
-    I use Futura for headings and accent text. This is something of a controversial decision, as various designers
-    and typography experts have contradictory opinions on the use of this font on today's web. I stand by my choice for
-    a simple reason: I like the font! It's beautiful to my eyes, I love the sharp points and geometric purity, and it's
-    one of the few fonts that can stand on its own as a 300px full-width main header. It's not especially legible for
-    body text, so don't use it for that. Instead, I might use...
+    While Futura is a beautiful font with a storied history, its frequent use means that using it as a major heading
+    could ring derivative. As such, I use a variant of Futura called Architype Renner for headings and accent text. It
+    differs from vanilla Futura in its stylized alternate glyphs, such as the lowercase g you see above. These symbols
+    are from Renner's early concept sketches of the font that would eventually be Futura. I love the sharp points and
+    geometric purity that Futura brings to the page, and not many fonts can stand on their own as a 100px full-width
+    header. It was designed 50 years before the Web existed, however, and as such it begins to crumble at smaller point
+    sizes when used for body text on a screen. For that purpose, I might use…
 </p>
 
-<h3>Proxima Nova</h3>
+<h3>Inter</h3>
+<aside>Inter was developed by Rasmus Andersson of Figma and Spotify fame as an alternative to Roboto. He spent three
+    years on the open font, and it's still being iterated on to this day. Inter is used by companies such as GitHub and
+    Mozilla for body copy.</aside>
+<p>Since Inter was designed with modern displays in mind, it renders beautifully at many weights and point sizes on
+    screens of any DPI. It's also a gorgeous font as a heading, as seen in the splash pages of such projects as <a
+        href="https://nextjs.org/">Next.js</a>.</p>
+
+<!-- Old fonts that I no longer use on this website. -->
+<!-- <h3>Proxima Nova</h3>
 <aside>Proxima Nova was created by typographer Mark Simonson in 2005, and takes inspiration from Helvetica, Futura, and
     Akzidenz Grotesk, among others. It's designed with body-text legibility in mind, and incorporates modern type design
     very effectively, including features such as fractions, ligatures, and ordinals.</aside>
@@ -41,12 +52,13 @@ permalink: /design
     high-contrast (and <a class=broken-link future-href="/colour-themes">customizable</a>!) If you have a disability,
     and you find my website especially difficult to browse, I would greatly appreciate you contacting me at
     {{site.email-link}}).
-</p>
+</p> -->
 
 <h2>Colours</h2>
 <hr>
 <p>I make no claims about being a preëminent colour scientist. As such, I'll delegate this to the experts. My main
-    accent colour is cmyk(0, 100, 0, 0), because it prints perfectly on poor (process) printers and paper, in the same
+    accent colour is <code>cmyk(0, 100, 0, 0)</code>, because it prints perfectly on poor (process) printers and paper,
+    in the same
     manner a spot colour might in a professional printer's shop. Magenta was chosen because it's contrasty and
     interesting against a paper-white background. Pure cyan is too eye-bleedingly vivid, and pure yellow is an obvious
     non-starter. For the website, I've adapted it slightly, as RGB magenta isn't a very attractive colour on the web.
