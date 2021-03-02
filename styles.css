@@ -39,7 +39,7 @@ body {
 }
 
 h1, h2, h3, nav, .top-bar {
-    font-family: 'Architype Renner';
+    font-family: 'Architype Renner', Futura, "Proxima Nova", "Century Gothic", sans-serif;
     color: var(--accent-color);
 }
 
@@ -186,7 +186,7 @@ nav>a:hover, nav>a:focus {
 }
 
 .top-bar>button {
-    font-family: Futura, "Proxima Nova", "Century Gothic", sans-serif;
+    font-family: 'Architype Renner', Futura, "Proxima Nova", "Century Gothic", sans-serif;
     background-color: var(--navbar-button-color);
     color: var(--accent-color);
     border: none;
