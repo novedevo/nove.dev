@@ -22,7 +22,7 @@ title: Devon Sawatsky Burnham
 email: devon@nove.dev
 email-link: <a href="mailto:devon@nove.dev" target="_blank">devon@nove.dev</a>
 github: <a href="https://github.com/novedevo/novedevo.github.io" target="_blank">GitHub page</a>
-twitter-link: <a class="broken-link" future-href="https://twitter.com/novedevo/" target="_blank">@novedevo</a>
+twitter-link: <a href="https://twitter.com/novedevo/" target="_blank">@novedevo</a>
 description: Devon's personal website, featuring a selection of their coding projects and development experiments.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://nove.dev" # the base hostname & protocol for your site, e.g. http://example.com
