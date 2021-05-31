@@ -191,239 +191,216 @@ function update(time, delta) {
         player.body.drag.x = drag;
     }
 
+    let leftPressed;
+    let rightPressed;
+    let upPressed;
+    let downPressed;
+    let jumpPressed;
+    let dashPressed;
 
     if (pad) {
-        if (pad.left || (forceHoldLeft && forceHoldLeft.getRemaining() != 0)) {
-            facing = 'left';
-            if (!left && player.body.blocked.down) {
-                player.setVelocityX(-maxSpeed);
-            }
-            else if (player.body.velocity.x < -maxSpeed) {
-                player.setAccelerationX(0);
-            }
-            else {
-                player.setAccelerationX(-accel);
-            }
-            left = true;
-            right = false;
+        leftPressed = pad.left;
+        rightPressed = pad.right;
+        upPressed = pad.up;
+        downPressed = pad.down;
+        jumpPressed = pad.A;
+        dashPressed = pad.X;
+    } else {
+        leftPressed = cursors.left.isDown;
+        rightPressed = cursors.right.isDown;
+        upPressed = cursors.up.isDown;
+        downPressed = cursors.down.isDown;
+        jumpPressed = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE).isDown;
+        dashPressed = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SHIFT).isDown;
+    }
 
-            if (player.body.blocked.left && player.body.velocity.y > maxWallSlide) {
-                player.body.setVelocityY(maxWallSlide);
-                wallSliding = true;
-                lastWallSlide = 'left';
-            }
-            else {
-                if (wallSliding){
-                    wallGrace = this.time.addEvent({ delay: wallJumpGracePeriod })
-                }
-                wallSliding = false;
-            }
+
+    if (leftPressed || (forceHoldLeft && forceHoldLeft.getRemaining() != 0)) {
+        facing = 'left';
+        if (!left && player.body.blocked.down) {
+            player.setVelocityX(-maxSpeed);
         }
-
-        else if (pad.right || (forceHoldRight && forceHoldRight.getRemaining() != 0)) {
-            facing = 'right'
-            if (!right && player.body.blocked.down) {
-                player.setVelocityX(maxSpeed);
-            }
-            else if (player.body.velocity.x > maxSpeed) {
-                player.setAccelerationX(0);
-            }
-            else {
-                player.setAccelerationX(accel);
-            }
-            right = true;
-            left = false;
-
-            if (player.body.blocked.right && player.body.velocity.y > maxWallSlide) {
-                player.body.setVelocityY(maxWallSlide);
-                wallSliding = true;
-                lastWallSlide = 'right';
-            }
-            else {
-                if (wallSliding){
-                    wallGrace = this.time.addEvent({ delay: wallJumpGracePeriod });
-                }
-                wallSliding = false;
-            }
-        }
-
-        else {
+        else if (player.body.velocity.x < -maxSpeed) {
             player.setAccelerationX(0);
-            left = false;
-            right = false;
-        }
-
-        if (a && !pad.A) {
-
-            if (player.body.velocity.y < -shortJumpSpeed) {
-                player.body.velocity.y = -shortJumpSpeed;
-            }
-
-            a = false;
-            player.body.allowGravity = true;
-            player.body.setGravity(0, 0);
-            //jumpStartPoint = null;
-        }
-
-        //jump
-        else if (!a && pad.A && player.body.blocked.down) {
-            //jumpStartPoint = player.body.position.clone();
-            player.setVelocityY(-jumpSpeed);
-            a = true;
-            if (pad.left && player.body.velocity.x > -maxSpeed) {
-                player.setVelocityX(-maxSpeed);
-            }
-            if (pad.right && player.body.velocity.x < maxSpeed) {
-                player.setVelocityX(maxSpeed);
-            }
-        }
-
-        //walljump
-        else if (!a && pad.A && (wallSliding || (wallGrace && wallGrace.getRemaining() != 0))) {
-            if (lastWallSlide === 'left') {
-                player.setVelocityY(-jumpSpeed);
-                player.setVelocityX(maxSpeed);
-                a = true;
-                forceHoldRight = this.time.addEvent({ delay: wallJumpForcedPeriod });
-            }
-            else if (lastWallSlide === 'right') {
-                player.setVelocityY(-jumpSpeed);
-                player.setVelocityX(-maxSpeed);
-                a = true;
-                forceHoldLeft = this.time.addEvent({ delay: wallJumpForcedPeriod });
-            }
-        }
-        //midair hover
-        else if (pad.A && Math.abs(player.body.velocity.y) < hoverThreshold) {
-            player.body.setGravity(0, -200);
-            a = true;
         }
         else {
-            if (!(player.body.velocity.y > maxFallSpeed)){
-                player.body.allowGravity = true;
+            player.setAccelerationX(-accel);
+        }
+        left = true;
+        right = false;
+
+        if (player.body.blocked.left && player.body.velocity.y > maxWallSlide) {
+            player.body.setVelocityY(maxWallSlide);
+            wallSliding = true;
+            lastWallSlide = 'left';
+        }
+        else {
+            if (wallSliding){
+                wallGrace = this.time.addEvent({ delay: wallJumpGracePeriod })
             }
-            
-            player.body.setGravity(0, 0);
-            jumpStartPoint = null;
+            wallSliding = false;
+        }
+    }
+
+    else if (rightPressed || (forceHoldRight && forceHoldRight.getRemaining() != 0)) {
+        facing = 'right'
+        if (!right && player.body.blocked.down) {
+            player.setVelocityX(maxSpeed);
+        }
+        else if (player.body.velocity.x > maxSpeed) {
+            player.setAccelerationX(0);
+        }
+        else {
+            player.setAccelerationX(accel);
+        }
+        right = true;
+        left = false;
+
+        if (player.body.blocked.right && player.body.velocity.y > maxWallSlide) {
+            player.body.setVelocityY(maxWallSlide);
+            wallSliding = true;
+            lastWallSlide = 'right';
+        }
+        else {
+            if (wallSliding){
+                wallGrace = this.time.addEvent({ delay: wallJumpGracePeriod });
+            }
+            wallSliding = false;
+        }
+    }
+
+    else {
+        player.setAccelerationX(0);
+        left = false;
+        right = false;
+    }
+
+    if (a && !jumpPressed) {
+
+        if (player.body.velocity.y < -shortJumpSpeed) {
+            player.body.velocity.y = -shortJumpSpeed;
         }
 
-        //dash
-        if (dashable && !x && pad.X && (facing || pad.up || pad.down)) {
-            startPoint = player.body.position.clone();
-            player.body.allowDrag = false;
-            oldVelocity = player.body.velocity.clone();
-            player.body.setVelocityX(0).setVelocityY(0);
-            player.body.allowGravity = false;
-            player.body.setAccelerationX(0).setVelocityY(0);
+        a = false;
+        player.body.allowGravity = true;
+        player.body.setGravity(0, 0);
+        //jumpStartPoint = null;
+    }
+
+    //jump
+    else if (!a && jumpPressed && player.body.blocked.down) {
+        //jumpStartPoint = player.body.position.clone();
+        player.setVelocityY(-jumpSpeed);
+        a = true;
+        if (leftPressed && player.body.velocity.x > -maxSpeed) {
+            player.setVelocityX(-maxSpeed);
+        }
+        if (rightPressed && player.body.velocity.x < maxSpeed) {
+            player.setVelocityX(maxSpeed);
+        }
+    }
+
+    //walljump
+    else if (!a && jumpPressed && (wallSliding || (wallGrace && wallGrace.getRemaining() != 0))) {
+        if (lastWallSlide === 'left') {
+            player.setVelocityY(-jumpSpeed);
+            player.setVelocityX(maxSpeed);
+            a = true;
+            forceHoldRight = this.time.addEvent({ delay: wallJumpForcedPeriod });
+        }
+        else if (lastWallSlide === 'right') {
+            player.setVelocityY(-jumpSpeed);
+            player.setVelocityX(-maxSpeed);
+            a = true;
+            forceHoldLeft = this.time.addEvent({ delay: wallJumpForcedPeriod });
+        }
+    }
+    //midair hover
+    else if (jumpPressed && Math.abs(player.body.velocity.y) < hoverThreshold) {
+        player.body.setGravity(0, -200);
+        a = true;
+    }
+    else {
+        if (!(player.body.velocity.y > maxFallSpeed)){
+            player.body.allowGravity = true;
+        }
+        
+        player.body.setGravity(0, 0);
+        jumpStartPoint = null;
+    }
+
+    //dash
+    if (dashable && !x && dashPressed && (facing || upPressed || downPressed)) {
+        startPoint = player.body.position.clone();
+        player.body.allowDrag = false;
+        oldVelocity = player.body.velocity.clone();
+        player.body.setVelocityX(0).setVelocityY(0);
+        player.body.allowGravity = false;
+        player.body.setAccelerationX(0).setVelocityY(0);
 
 
-            dashSparkTimer = this.time.addEvent({ delay: 150 });
+        dashSparkTimer = this.time.addEvent({ delay: 150 });
 
-            if (pad.up) {
-                dash += 'up';
-                dashDirs['vert'] = true;
-                player.body.setVelocityY(-dashSpeed);
+        if (upPressed) {
+            dash += 'up';
+            dashDirs['vert'] = true;
+            player.body.setVelocityY(-dashSpeed);
+        }
+        else if (downPressed) {
+            dash += 'down';
+            dashDirs['vert'] = true;
+            player.body.setVelocityY(dashSpeed);
+        }
+        if (facing === 'left') {
+            if (!dash) {
+                dash += 'left';
+                dashDirs['horz'] = true;
+                player.body.setVelocityX(-dashSpeed);
             }
-            else if (pad.down) {
-                dash += 'down';
-                dashDirs['vert'] = true;
-                player.body.setVelocityY(dashSpeed);
-            }
-            if (facing === 'left') {
-                if (!dash) {
+            else {
+                if (leftPressed) {
                     dash += 'left';
                     dashDirs['horz'] = true;
                     player.body.setVelocityX(-dashSpeed);
                 }
-                else {
-                    if (pad.left) {
-                        dash += 'left';
-                        dashDirs['horz'] = true;
-                        player.body.setVelocityX(-dashSpeed);
-                    }
-                }
             }
-            if (facing === 'right') {
-                if (!dash) {
+        }
+        if (facing === 'right') {
+            if (!dash) {
+                dash += 'right';
+                dashDirs['horz'] = true;
+                player.body.setVelocityX(dashSpeed);
+            }
+            else {
+                if (rightPressed) {
                     dash += 'right';
                     dashDirs['horz'] = true;
                     player.body.setVelocityX(dashSpeed);
                 }
-                else {
-                    if (pad.right) {
-                        dash += 'right';
-                        dashDirs['horz'] = true;
-                        player.body.setVelocityX(dashSpeed);
-                    }
-                }
             }
-
-            x = true;
-            dashable = false;
-            player.visible = false;
-            particles = this.add.particles('spark');
-            emitter = particles.createEmitter({
-                speed: 100,
-                frequency: 0.001,
-                blend: 'add'
-            });
-            emitter.startFollow(player);
-        }
-        else if (pad.X) {
-            x = true;
-        }
-        else if (!pad.X) {
-            x = false;
         }
 
+        x = true;
+        dashable = false;
+        player.visible = false;
+        particles = this.add.particles('spark');
+        emitter = particles.createEmitter({
+            speed: 100,
+            frequency: 0.001,
+            blend: 'add'
+        });
+        emitter.startFollow(player);
     }
-    else {
-
-
-        if (controls.JustDown(cursors.left) && player.body.blocked.down) {
-            player.setVelocityX(-startRunVelocity);
-        }
-        if (controls.JustDown(cursors.right) && player.body.blocked.down) {
-            player.setVelocityX(startRunVelocity);
-        }
-
-
-        if (cursors.left.isDown) {
-            if (player.body.velocity.x < -maxSpeed) {
-                player.setAccelerationX(0);
-            }
-            else {
-                player.setAccelerationX(-accel);
-            }
-
-        }
-        else if (cursors.right.isDown) {
-            if (player.body.velocity.x > maxSpeed) {
-                player.setAccelerationX(0);
-            }
-            else {
-                player.setAccelerationX(accel);
-            }
-        }
-        else {
-            player.setAccelerationX(0);
-        }
-
-        if (controls.JustDown(cursors.up) && player.body.blocked.down) {
-            player.setVelocityY(-jumpSpeed);
-        }
-        if (Math.abs(player.body.velocity.y) < hoverThreshold && cursors.up.isDown) {
-            player.body.setGravity(0, -200);
-        }
-        else {
-            player.body.setGravity(0, 0);
-        }
+    else if (dashPressed) {
+        x = true;
     }
-
+    else if (!dashPressed) {
+        x = false;
+    }
 }
 
 function frictionCalc(velocity) {
-    console.log(-friction * velocity);
+    // console.log(-friction * velocity);
     return -friction * velocity;
 
 }
