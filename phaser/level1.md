@@ -2,7 +2,6 @@
 layout: phaser
 title: Simple Retro Platformer
 description: A simple, pixel-art, retro-inspired platformer that I'm developing as a side project. Pre-alpha! Work in progress!
-permalink: /phaser
 ---
 
 <button id="play-button">Play music</button>
