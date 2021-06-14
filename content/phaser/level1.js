@@ -98,11 +98,11 @@ let dashVelocities = {
 }
 
 function preload() {
-    this.load.image('tiles', 'assets/tiles.png');
-    this.load.tilemapTiledJSON('map', 'assets/untitled.json');
-    this.load.spritesheet('heart', 'assets/heart.png', { frameWidth: 8, frameHeight: 8 }, '/phaser/heart.json');
-    this.load.image('spark', 'assets/spark.png');
-    this.load.audio('soundtrack', 'assets/soundtrack.opus');
+    this.load.image('tiles', '/assets/tiles.png');
+    this.load.tilemapTiledJSON('map', '/assets/untitled.json');
+    this.load.spritesheet('heart', '/assets/heart.png', { frameWidth: 8, frameHeight: 8 }, '/phaser/heart.json');
+    this.load.image('spark', '/assets/spark.png');
+    this.load.audio('soundtrack', '/assets/soundtrack.opus');
 }
 
 function create() {
