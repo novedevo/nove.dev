@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Devon Sawatsky Burnham">
-    <meta name="description" content={{ description }}>
+    <title>{{section.title}}</title>
+    <meta name="description" content="{{section.description}}"
 
     <!-- generic favicons -->
     <link rel="icon" href="/favicons/favicon-16.png" sizes="16x16">
@@ -22,13 +23,11 @@
     </style>
 
     <script src="//cdn.jsdelivr.net/npm/phaser@3.52.0/dist/phaser.js"></script>
-
-    <title>{{ page.title }}</title>
 </head>
 
 <body>
 
-    {{ content }}
+    {{section.content | safe}}
 
 </body>
 
