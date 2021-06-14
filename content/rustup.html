@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Placeholder
-permalink: /rustup
 ---
 
 <h1>Replicate my Rusty working environment</h1>

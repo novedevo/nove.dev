@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Music
-permalink: /music
 header: <h1>Music</h1>
 ---
 
