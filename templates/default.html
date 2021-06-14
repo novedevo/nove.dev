@@ -1,13 +1,12 @@
----
-layout: base
----
+{% extends "base.html" %}
 
+{% block default %}
 {% include "nav.html" %}
-
 <div class="content">
-    {{ page.header }}
+    {% block header %} {% endblock %}
     <main>
-    {{ content }}
+    {% block content %} {% endblock %}
     </main>
 </div>
 {% include "footer.html" %}
+{% endblock default %}
