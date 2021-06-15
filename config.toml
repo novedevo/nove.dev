@@ -17,7 +17,7 @@ description = "Devon's personal website, featuring a selection of their coding p
 
 [extra]
 # Put all your custom variables here
-email = "devon@nove.dev"
-email_link = "<a href=\"mailto:devon@nove.dev\" target=\"_blank\">devon@nove.dev</a>"
-github = "<a href=\"https://github.com/novedevo/novedevo.github.io\" target=\"_blank\">GitHub page</a>"
+email = "novedevo@gmail.com"
+email_link = "<a href=\"mailto:novedevo@gmail.com\" target=\"_blank\">novedevo@gmail.com</a>"
+github = "<a href=\"https://github.com/novedevo/nove.dev\" target=\"_blank\">GitHub page</a>"
 twitter_link = "<a href=\"https://twitter.com/novedevo/\" target=\"_blank\">@novedevo</a>"
