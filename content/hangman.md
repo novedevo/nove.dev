@@ -1,3 +1,6 @@
++++
++++
+
 This was inspired by jan Misali's video on the game.
 The first version was written in Python, as it's one of my stronger languages and maps well to prototyping hobby projects.
 However, I was looking to learn the Rust programming language, and this seemed like a good place to start. 

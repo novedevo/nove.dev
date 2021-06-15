@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Skills & Experience
-permalink: /skills
 ---
 
 <h1>Skills & Experience</h1>

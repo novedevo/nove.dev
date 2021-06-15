@@ -1,12 +1,12 @@
----
-layout: default
-permalink: /404
----
+{% extends "base.html" %}
+
+{% block default %}
 <main>
     <h1 class='notfound-header'>404</h1>
     <h2 class='notfound-message'>Page not found.</h2>
     <p class='notfound-body'>This could be due to a mistyped URL, misconfigured servers, or a broken link. If it's something that I can fix,
-        please open an issue at the {{ site.github }}, email me at {{ site.email-link }}, or contact the administration of the external website
+        please open an issue at the {{ config.extra.github | safe}}, email me at {{ config.extra.email_link | safe}}, or contact the administration of the external website
         that provided the link.
     </p>
 </main>
+{% endblock default %}
