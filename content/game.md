@@ -1,4 +1,5 @@
 +++
+template = "page.html"
 +++
 
 The code is messy, unoptimal, and hacked together. It was my first real foray into JavaScript, and the documentation for Phaser is scattered and lost.

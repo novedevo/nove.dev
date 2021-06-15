@@ -1,7 +1,7 @@
----
-layout: default
-title: Skills & Experience
----
++++
+template = "page.html"
+title = "Skills & Experience"
++++
 
 <h1>Skills & Experience</h1>
 

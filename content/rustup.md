@@ -1,7 +1,7 @@
----
-layout: default
-title: Placeholder
----
++++
+template = "page.html"
+title = "Placeholder"
++++
 
 <h1>Replicate my Rusty working environment</h1>
 <p>

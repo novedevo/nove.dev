@@ -1,4 +1,5 @@
 +++
+template = "page.html"
 +++
 
 My projects can be broadly broken into two categories: independent and school-directed. There is some overlap, for instance, my Rust Hour project began as a rewrite of a Java-based class project. 

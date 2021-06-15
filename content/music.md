@@ -1,8 +1,8 @@
----
-layout: default
-title: Music
-header: <h1>Music</h1>
----
++++
+template = "page.html"
+title = "Music"
+header = "<h1>Music</h1>"
++++
 
 
 
