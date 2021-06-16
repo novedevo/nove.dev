@@ -72,8 +72,8 @@ This language, and the functional programming paradign in general, are very enti
 I have extremely limited experience with Haskell, but I've used concepts from functional programming in Python and C++ projects before, and it always results in clean, intuitive code. 
 Monads are scary, but maybe one day I'll get around to properly learning it.
 
-### Perl
-Whenever I look for information on Perl, I feel like I'm browsing the new-age or self-help sections of my [local used bookstore](http://pulpfictionbooksvancouver.com/). 
+### Lisp
+Whenever I look for information on Lisp, I feel like I'm browsing the new-age or self-help sections of my [local used bookstore](http://pulpfictionbooksvancouver.com/). 
 The metaprogramming features of this language seem very powerful, but I haven't explored this language much.
 
 ### LaTeX
