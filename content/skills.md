@@ -17,6 +17,11 @@ Some of my friends come from Québec.
 I'm not fluent by any means, but I can understand basic sentences with difficulty. 
 I'm actively working on improving my grasp of the language by following francophones on social media and listening to French podcasts.
 
+## Rust
+This is the newest language I've taught myself.
+I've grown to love the strong static type system, and the removal of footguns from C++.
+Rust's guarantees about memory safety and immutability are powerful, and not replicated in any comparably low-level language.
+
 ### Python
 Python is probably my first (programming) language. 
 I taught myself the basics from various websites when I was in grade 6, and used it for various single-file small projects, such as a randomized number-guessing game. 
@@ -26,7 +31,6 @@ The concise syntax, freedom from boilerplate, and intuitive English-like languag
 I've built GUI applications with Tkinter and webapps with Flask. 
 I've used it for my Chemistry classes as an overpowered scientific calculator, and in my Linear Algebra classes as a substitute for MATLAB. 
 When I have an assignment in another language, like C++ or Java, I will sometimes rewrite the program in Python, thereby cutting the LoC in half.
-
 
 ### C++
 I first used C++ when I got an Osepp Arduino Uno as a gift, sometime around grade 7. 
@@ -62,7 +66,8 @@ I follow intelligent, experienced web developers on social media and read their 
 Learn from the best.
 
 ### JavaScript
-This is my most recently acquired language. I use it for basic interactivity on this website (e.g. the theme button in the header). 
+This is a more recently acquired language. 
+I use it for basic interactivity on this website (e.g. the theme button in the header). 
 In an effort to improve my skills with the language, I'm working on a [video game](/phaser/) using the Phaser.js game design framework. 
 I'm intrigued by React and Next.js. 
 If you check back later, maybe there will be some more of that hosted here.
@@ -78,7 +83,7 @@ The metaprogramming features of this language seem very powerful, but I haven't 
 
 ### LaTeX
 In a similar vein to HTML, this doesn't really count as a language. 
-I've been meaning to learn how to use it for academic papers and note-taking in math class, but have been recently stymied by incompatibilities between WSL and the VS Code LaTeX extension. 
+I've been meaning to learn how to use it for academic papers and note-taking in math class, but have been stymied by incompatibilities between WSL and the VS Code LaTeX extension. 
 If I ever manage to get a local development environment working, I'll update this section with a MathJAX rendered LaTeX logo, instead of the bootleg version seen here.
 
 ### Dart
@@ -92,6 +97,7 @@ I've experimented with Flutter in the past, and the idea of creating a cross-pla
 This is the typical OS that I use day-to-day. I run the latest beta Insiders build, and keep it up to date. I dislike it for development, so whenever possible I work with my code using Visual Studio Code running out of Ubuntu on WSL2.
 
 ### Linux
+My software development work is done primarily out of an Arch Linux VM under WSL2.
 I wish I could use Linux as my primary OS. 
 I love the customizability, and unified package management, and the no-safety-rails approach to user experience. 
 I've installed Arch, struggled with `GRUB` modifications on an ornery netbook with a 64-bit CPU that can only boot 32-bit UEFIs, and broken more installations than I can remember. 
@@ -100,6 +106,8 @@ Whether it's my ENSC courses requiring Quartus or Visio, my projects using Ablet
 2021 may be the year of the [Linux Marstop](https://spectrum.ieee.org/automaton/aerospace/robotic-exploration/nasa-designed-perseverance-helicopter-rover-fly-autonomously-mars), but `$NEXT_YEAR` will always be the year of the Linux desktop.
 
 ### FreeBSD
+*The following opinion is born of trauma and does not represent the views of myself or my employer.*
+
 I really dislike FreeBSD. My main server runs it, and any time I have to interact with FreeBSD directly, I die a little inside. 
 The ports system is backwards compared to `apt` or `pacman`, and `pkg` is hardly better. 
 Jails without `vim` installed was a particularly frustrating pain point until I realized I could just use `vi`. 
