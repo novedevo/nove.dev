@@ -1,0 +1,65 @@
+[[projects]]
+title = "nove.dev"
+description = "This website itself. Written in Markdown, HTML5/CSS3/JS and preprocessed by Zola through Cloudflare Pages."
+source = "https://github.com/novedevo/nove.dev"
+language = "HTML"
+
+[[projects]]
+title = "Lose at Hangman"
+description = "Hangman guessing engine, written in Rust and Javascript, hosted on Oracle cloud"
+language = "Rust"
+source = "https://github.com/novedevo/lose_at_hangman_rs"
+link = "https://hangman.nove.dev/"
+
+[[projects]]
+title = "Phaser"
+description = "Video game development using the Phaser JavaScript framework."
+link = "/phaser"
+source = "https://github.com/novedevo/nove.dev/tree/master/phaser"
+language = "Javascript"
+
+[[projects]]
+title = "STPU"
+description = "A tensor core, similar to those found in machine learning-focused products from the likes of Nvidia, written in VHDL."
+source = "https://github.com/novedevo/ENSC-252/tree/master/final"
+language = "VHDL"
+
+[[projects]]
+title = "IoT"
+description = 'Software lead on an IoT pet feeder. This involved systems design, interacting with cloud services and an Android app, and writing lots of C++. As software lead, my role also involved coordination between teammates, project management, and "devops" such as showing people Git.'
+language = "C++"
+source = "https://github.com/novedevo/ENSC100W-Project/"
+
+[[projects]]
+title = "3D Printer"
+description = "CAD model of an innovative multi-axis FDM 3D printer, to produce objects with less supports and more resistance to delamination. This was a capstone project for an engineering design class. I used Autodesk Inventor to model and simulate the design."
+
+[[projects]]
+title = "Sail"
+description = "RFC-compliant SMTP relay server"
+Language = "Rust"
+source = "https://github.com/novedevo/sail"
+
+[[projects]]
+title = "Vaccine predictor"
+description = "Data analysis and forecasting for COVID-19 vaccine availability"
+Language = "Jupyter"
+source = "https://github.com/novedevo/vaccine-predictor"
+
+[[projects]]
+title = "raytracer"
+description = "Raytraced 3D rendering engine"
+language = "Rust"
+source = "https://github.com/novedevo/raytracer"
+
+[[projects]]
+title = "starboard"
+description = "Discord bot for permissions-friendly pinnability"
+language = "Python"
+source = "https://github.com/novedevo/starboard"
+
+[[projects]]
+title = "Rush Hour"
+description = "Solves the common sliding block puzzle Rush Hour"
+language = "Java"
+source = "https://github.com/novedevo/rush_hour/"
