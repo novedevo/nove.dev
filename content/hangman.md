@@ -1,5 +1,4 @@
 +++
-template = "page.html"
 +++
 
 This was inspired by jan Misali's video on the game.

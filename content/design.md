@@ -1,5 +1,4 @@
 +++
-template = "page.html"
 title = "Design Choices & Decisions"
 description = "Explanation and justification behind all the choices that I consciously made for this website."
 +++
