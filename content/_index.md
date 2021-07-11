@@ -1,9 +1,7 @@
 +++
-template = "page.html"
 description = "Devon's personal website, featuring a selection of their coding projects and development experiments."
+title = "Devon Sawatsky Burnham"
 +++
-
-<h1 id="home" class=ss03>Devo<span class=ss01>n</span> Sawatsky Bu<span class=ss01>rn</span>ha<span class=ss01>m</span></h1>
 
 ## About Me
 ***
