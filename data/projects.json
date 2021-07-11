@@ -39,8 +39,8 @@
     {
       "title": "Sail",
       "description": "RFC-compliant SMTP relay server",
-      "Language": "Rust",
-      "source": "https://github.com/novedevo/sail"
+      "language": "Rust",
+      "source": "https://github.com/gennyble/sail"
     },
     {
       "title": "Vaccine predictor",

@@ -61,7 +61,7 @@ code {
     padding: 1px 3px;
 }
 
-main>p, main>ul, aside, footer {
+main>p, main>ul, aside, footer, details {
     font-family: Inter, "Fira Sans", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.8;
     font-size: 20px;
