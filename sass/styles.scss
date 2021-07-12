@@ -14,8 +14,7 @@
 $title-font: 'Architype Renner', Futura, "Proxima Nova", "Century Gothic", sans-serif;
 $sans-font: Inter, "Fira Sans", Roboto, Helvetica, Arial, sans-serif;
 
-//dark theme colours
-html {
+@mixin dark-colours {
     --background-color: aliceblue;
     --navbar-button-color: #d5dae3;
     --focus-navbar-button-color: #c8d2e6;
@@ -23,13 +22,30 @@ html {
     --accent-background-color: #ff6bb3;
     --text-color: #002b36;
 }
-html[data-theme="dark"] {
+
+@mixin light-colours {
     --background-color: #002b36;
     --navbar-button-color: #073642;
     --focus-navbar-button-color: #084d5e;
     --accent-color: #d33682;
     --accent-background-color: #57092f;
     --text-color: #fdf6e3;
+}
+
+//dark theme colours
+html { //default
+    @include light-colours();
+} //if browser preference is set
+@media screen and (prefers-color-scheme: dark) {
+    html {
+        @include dark-colours()
+    } 
+} //allow js override
+html[data-theme="dark"] {
+    @include dark-colours()
+}
+html[data-theme="light"] {
+    @include light-colours()
 }
 
 body {
