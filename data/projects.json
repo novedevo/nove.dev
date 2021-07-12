@@ -18,7 +18,7 @@
       "description": "Video game development using the Phaser JavaScript framework.",
       "link": "/phaser",
       "source": "https://github.com/novedevo/nove.dev/tree/master/phaser",
-      "language": "Javascript"
+      "language": "JavaScript"
     },
     {
       "title": "STPU",
@@ -45,7 +45,7 @@
     {
       "title": "Vaccine predictor",
       "description": "Data analysis and forecasting for COVID-19 vaccine availability",
-      "Language": "Jupyter",
+      "language": "Jupyter",
       "source": "https://github.com/novedevo/vaccine-predictor"
     },
     {
