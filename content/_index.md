@@ -34,7 +34,7 @@ I'm available for hire as an intern, and I'm currently seeking placement through
 ## Contact Me
 ***
 
-- Email: <a href="mailto:novedevo@gmail.com" target="_blank">novedevo@gmail.com</a>
+- Email: (removed to thwart scraping spam)
 - Twitter: <a href="https://twitter.com/novedevo/" target="_blank">@novedevo</a>
 - <a href="https://github.com/novedevo/nove.dev" target="_blank">GitHub page</a>
 - <a href="https://www.linkedin.com/in/novedevo/" target="_blank">LinkedIn profile</a>
