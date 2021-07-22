@@ -209,13 +209,24 @@ button:focus {
     display: none; //hide at larger screen sizes
 }
 
-div.projects {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    grid-template-rows: masonry;
+@supports (grid-template-rows: masonry) {
+    div.projects {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        grid-template-rows: masonry;
+    }
 }
-div.projects>* {
+@supports not (grid-template-rows: masonry) {
+    div.projects {
+        margin: 0;
+    }
+    div.projects>div.project {
+        width: 240px;
+        margin-bottom: 10px;
+    }
+}
+div.projects>div.project {
     border:1px solid blue;
     font-family: $sans-font;
     color: var(--text-color);
