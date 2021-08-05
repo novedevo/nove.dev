@@ -20,6 +20,12 @@
       "source": "https://github.com/gennyble/sail"
     },
     {
+      "title": "Watertable",
+      "description": "Data visualization and collation for aquifer status",
+      "language": "Jupyter",
+      "source": "https://github.com/novedevo/watertable"
+    },
+    {
       "title": "Vaccine Predictor",
       "description": "Data analysis and forecasting for COVID-19 vaccine availability",
       "language": "Jupyter",
