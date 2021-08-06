@@ -60,7 +60,7 @@
       "title": "STPU",
       "description": "A tensor core, similar to those found in machine learning-focused products from the likes of Nvidia, written in VHDL.",
       "source": "https://github.com/novedevo/ENSC-252/tree/master/final",
-      "language": "VHDL"
+      "language-unknown": "VHDL"
     },
     {
       "title": "IoT",
