@@ -7,9 +7,9 @@ title = "Devon Sawatsky Burnham"
 ***
 
 I'm a computer engineering student located in Vancouver, BC and studying at Simon Fraser University.
-I have experience in Java, Rust, C++, Python, HTML/CSS/JS, and hardware design using VHDL and Quartus.
+I have experience in languages including Java, Rust, C++, Python, HTML/CSS/JS, and hardware design using VHDL and Quartus.
 I've built various projects with Arduino, ESP8266, and Raspberry Pi, and I've worked with AutoCAD and Inventor.
-My passion projects include home server architecture using Docker & Kubernetes under Debian Linux (formerly FreeBSD) with TrueNAS, home network architecture in the Unifi ecosystem, game design, and music production.
+My passion projects include home server architecture using Docker & Kubernetes under Debian Linux (formerly FreeBSD) with TrueNAS, home network architecture in the Unifi ecosystem, game design, and experimental music production.
 I love learning new things and working on accessibility.
 My interests include music, hiking, coding and video games.
 In my spare time, I like solving puzzles such as nonograms, shikaku, and crosswords. 
