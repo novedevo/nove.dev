@@ -20,6 +20,12 @@
       "source": "https://github.com/gennyble/sail"
     },
     {
+      "title": "Watertable",
+      "description": "Data visualization and collation for aquifer status",
+      "language": "Jupyter",
+      "source": "https://github.com/novedevo/watertable"
+    },
+    {
       "title": "Vaccine Predictor",
       "description": "Data analysis and forecasting for COVID-19 vaccine availability",
       "language": "Jupyter",
@@ -54,7 +60,7 @@
       "title": "STPU",
       "description": "A tensor core, similar to those found in machine learning-focused products from the likes of Nvidia, written in VHDL.",
       "source": "https://github.com/novedevo/ENSC-252/tree/master/final",
-      "language": "VHDL"
+      "language-unknown": "VHDL"
     },
     {
       "title": "IoT",
