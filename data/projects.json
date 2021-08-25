@@ -23,7 +23,8 @@
       "title": "Watertable",
       "description": "Data visualization and collation for aquifer status",
       "language": "Jupyter",
-      "source": "https://github.com/novedevo/watertable"
+      "source": "https://github.com/novedevo/watertable",
+      "link": "https://watertable.nove.dev"
     },
     {
       "title": "Vaccine Predictor",
