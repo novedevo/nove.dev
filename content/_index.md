@@ -7,6 +7,7 @@ title = "Devon Sawatsky Burnham"
 ***
 
 I'm a computer engineering student located in Vancouver, BC and studying at Simon Fraser University.
+I'm a junior software developer at SportsIQ Analytics.
 I have experience in languages including Java, Rust, C++, Python, HTML/CSS/JS, and hardware design using VHDL and Quartus.
 I've built various projects with Arduino, ESP8266, and Raspberry Pi, and I've worked with AutoCAD and Inventor.
 My passion projects include home server architecture using Docker & Kubernetes under Debian Linux (formerly FreeBSD) with TrueNAS, home network architecture in the Unifi ecosystem, game design, and experimental music production.
@@ -27,7 +28,7 @@ Any classes that I took in university have repos there. This includes courses on
 ## Hire Me
 ***
 
-I'm available for hire as an intern, and I'm currently seeking placement through SFU's co-op program.
+I'm not currently available to hire, but feel free to get in touch!
 <!-- If you're interested in hiring me, you can view my <a class="broken-link" future-href="/resume">résumé</a>, or get in [contact](#contact). -->
 
 
