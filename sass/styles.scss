@@ -135,24 +135,15 @@ a {
   color: var(--accent-color);
 }
 
-main > a:visited {
-  color: var(--accent-background-color);
-}
-
-main > a:hover {
-  background-color: var(--navbar-button-color);
-}
-
 ul {
   list-style: none;
-}
-
-ul > li::before {
-  content: "◇ ";
-  color: var(--accent-color);
-  display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+  li::before {
+    content: "◇ ";
+    color: var(--accent-color);
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
 }
 
 html {
@@ -173,80 +164,75 @@ main {
   padding-top: 0px;
   line-height: 1;
   font-size: 1.1rem;
+
+  nav {
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: nowrap;
+
+    a {
+      padding: 10px;
+      padding-right: 20px;
+      padding-left: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+      text-decoration: none;
+      background-color: var(--navbar-button-color);
+      border-radius: 10px;
+      border-top-left-radius: 0%;
+      border-top-right-radius: 0%;
+    }
+
+    a:hover,
+    a:focus {
+      background-color: var(--focus-navbar-button-color);
+    }
+  }
+
+  button {
+    font-family: $title-font;
+    background-color: var(--navbar-button-color);
+    color: var(--accent-color);
+    border: none;
+    padding: 10px;
+    :hover {
+      background-color: var(--focus-navbar-button-color);
+    }
+    :focus {
+      border: none;
+      background-color: var(--focus-navbar-button-color);
+    }
+    svg {
+      display: none; //hide at larger screen sizes
+    }
+  }
 }
 
-nav {
-  display: flex;
-  flex-grow: 1;
-  flex-wrap: nowrap;
-}
-
-nav > a {
-  padding: 10px;
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  text-decoration: none;
-  background-color: var(--navbar-button-color);
-  border-radius: 10px;
-  border-top-left-radius: 0%;
-  border-top-right-radius: 0%;
-}
-
-nav > a:hover,
-nav > a:focus {
-  background-color: var(--focus-navbar-button-color);
-}
-
-.top-bar > button {
-  font-family: $title-font;
-  background-color: var(--navbar-button-color);
-  color: var(--accent-color);
-  border: none;
-  padding: 10px;
-}
-
-button:hover,
-button:focus {
-  background-color: var(--focus-navbar-button-color);
-}
-
-button:focus {
-  border: none;
-}
-
-.top-bar > button > svg {
-  display: none; //hide at larger screen sizes
-}
-
-@supports (grid-template-rows: masonry) {
-  div.projects {
+.projects {
+  @supports (grid-template-rows: masonry) {
     display: grid;
     gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     grid-template-rows: masonry;
   }
-}
-@supports not (grid-template-rows: masonry) {
-  div.projects {
+  @supports not (grid-template-rows: masonry) {
     margin: 0;
+    .project {
+      width: 240px;
+      margin-bottom: 10px;
+    }
   }
-  div.projects > div.project {
-    width: 240px;
-    margin-bottom: 10px;
+  .project {
+    border: 1px solid blue;
+    font-family: $sans-font;
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--navbar-button-color);
+    h2 {
+      margin-top: 0px;
+    }
   }
-}
-div.projects > div.project {
-  border: 1px solid blue;
-  font-family: $sans-font;
-  color: var(--text-color);
-  padding: 10px;
-  border-radius: 10px;
-  background-color: var(--navbar-button-color);
-}
-div.projects h2 {
-  margin-top: 0px;
 }
 
 //Crossed-out links
@@ -284,7 +270,7 @@ footer {
   margin: 12px;
 }
 
-/* Stickifying the footer */
+// Stickifying the footer
 
 .content {
   flex: 1 0 auto;
@@ -331,12 +317,14 @@ footer {
   }
 }
 
-@media only screen and (max-width: 400px) {
-  .top-bar > button > svg {
-    display: block;
-  }
-  .top-bar > button > .switch-themes {
-    display: none;
+@media only screen and (max-width: 450px) {
+  .top-bar > button > {
+    svg {
+      display: block;
+    }
+    .switch-themes {
+      display: none;
+    }
   }
   .notfound-header {
     font-size: 100px;
