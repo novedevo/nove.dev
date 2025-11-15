@@ -9,6 +9,10 @@ build_search_index = false
 
 theme = "terminimal"
 
+# taxonomies = [
+#     {name = "tags"}
+# ]
+
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
@@ -16,6 +20,7 @@ highlight_code = true
 
 title = "Devon Sawatsky Burnham"
 description = "Devon's personal website, featuring a selection of their coding projects and development experiments."
+language = "en-CA"
 
 [extra]
 # Put all your custom variables here
@@ -24,3 +29,23 @@ email_link = "(removed to thwart scraping spam)"
 github = "<a href=\"https://github.com/novedevo/nove.dev\" target=\"_blank\">GitHub page</a>"
 twitter_link = "<a href=\"https://twitter.com/novedevo/\" target=\"_blank\">@novedevo</a>"
 author = "Devon Sawatsky Burnham"
+
+# terminimal config
+logo_text = "nove.dev"
+accent_color = "pink-auto"
+background_color = "pink"
+menu_items = [
+    # each of these is optional, name and url are required
+    # $BASE_URL is going to be substituted by base_url from configuration
+    {name = "blog", url = "$BASE_URL/blog"},
+    
+    # tags should only be enabled if you have "tags" taxonomy
+    # see documentation below for more details
+    {name = "tags", url = "$BASE_URL/tags"},
+    {name = "archive", url = "$BASE_URL/archive"},
+    {name = "about", url = "$BASE_URL/about"},
+    
+    {name = "github", url = "https://github.com/novedevo", newtab = true},
+]
+enable_post_view_navigation = true
+post_view_navigation_prompt = "Read more"
