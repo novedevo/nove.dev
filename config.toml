@@ -1,51 +1,46 @@
 # The URL the site will be built for
 base_url = "https://nove.dev"
+title = "nove.dev"
+description = "devon's personal website"
 
-# Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
-
-# Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
-
 theme = "terminimal"
-
-# taxonomies = [
-#     {name = "tags"}
-# ]
+taxonomies = [
+    {name = "tags"}
+]
+generate_feeds = true
+default_language = "en-CA"
 
 [markdown]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
-
-title = "Devon Sawatsky Burnham"
-description = "Devon's personal website, featuring a selection of their coding projects and development experiments."
-language = "en-CA"
+bottom_footnotes = true
 
 [extra]
-# Put all your custom variables here
-email = "(removed to thwart scraping spam)"
-email_link = "(removed to thwart scraping spam)"
-github = "<a href=\"https://github.com/novedevo/nove.dev\" target=\"_blank\">GitHub page</a>"
-twitter_link = "<a href=\"https://twitter.com/novedevo/\" target=\"_blank\">@novedevo</a>"
-author = "Devon Sawatsky Burnham"
+author = "devon sawatsky burnham"
 
 # terminimal config
 logo_text = "nove.dev"
 accent_color = "pink-auto"
 background_color = "pink"
 menu_items = [
+    {name = "about", url = "$BASE_URL/about"},
     # each of these is optional, name and url are required
     # $BASE_URL is going to be substituted by base_url from configuration
     {name = "blog", url = "$BASE_URL/blog"},
     
     # tags should only be enabled if you have "tags" taxonomy
     # see documentation below for more details
-    {name = "tags", url = "$BASE_URL/tags"},
-    {name = "archive", url = "$BASE_URL/archive"},
-    {name = "about", url = "$BASE_URL/about"},
+    {name = "blogtags", url = "$BASE_URL/tags"},
+    # {name = "archive", url = "$BASE_URL/archive"},
+    {name = "blogroll", url = "$BASE_URL/blogroll"},
+    {name = "subdomains", url = "$BASE_URL/subs"},
     
     {name = "github", url = "https://github.com/novedevo", newtab = true},
+    # {name = "resume", url = "$BASE_URL/resume.pdf"},
 ]
 enable_post_view_navigation = true
 post_view_navigation_prompt = "Read more"
+page_titles = "combined"
