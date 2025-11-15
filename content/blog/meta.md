@@ -10,7 +10,7 @@ tags = ['web', 'meta']
 
 as is tradition, now that i've stripped my old website to the bones, my first post must be about the  technology that made the new website. if i am to follow in my priors' footsteps, this will also be the last post on this blog. i endeavour to not.
 
-both this site and my old site use the zola static site generator. my old site was laden with plenty of custom css, unpopular ideas about fonts, and altogether too much self-importance. this current site uses the stock terminimal theme with no adjustments, so hopefully i can actually write posts instead of screwing around with css. at least i've kept the theme colour.
+both this site and my old site use the zola static site generator. my old site was laden with plenty of custom css, unpopular ideas about fonts, and altogether too much self-importance. this current site uses the stock terminimal theme with no adjustments, so hopefully i can actually write posts instead of screwing around with css. <s>at least i've kept the theme colour</s> nope, green looks better.
 
 <details>
     <summary>aside</summary>
