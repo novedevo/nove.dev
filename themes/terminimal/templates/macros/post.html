@@ -28,6 +28,9 @@
         {%- if page.date %}
             {{ page.date | date(format="%Y-%m-%d") }}
         {% endif -%}
+        {% if page.updated %}
+            [updated {{ page.updated | date(format="%Y-%m-%d") }}]
+        {% endif %}
     </span>
 {% endmacro post_date %}
 
