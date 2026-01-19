@@ -20,3 +20,10 @@ path = "blogroll"
 
 mostly these just go at the bottom of whatever post on my blog is most relevant, but sometimes they don't obviously fit anywhere. like the following!
 - [datacenters in space](https://taranis.ie/datacenters-in-space-are-a-terrible-horrible-no-good-idea/), a great analysis by someone with actual relevant expertise, which has been rare on this topic
+
+## 88x31 buttons
+
+{{ _88x31(src="/88x31/nove.dev.png", alt="nove.dev", dest="https://nove.dev") }}
+{{ _88x31(src="/88x31/dreamy_button.gif", alt="dreamy.place", dest="https://dreamy.place") }}
+{{ _88x31(src="/88x31/tested on firefox.gif", alt="tested on firefox", dest="https://firefox.com") }}
+{{ _88x31(src="/88x31/cc-by-nc-sa.png", alt="cc-by-nc-sa", dest="https://creativecommons.org/licenses/by-nc-sa/4.0/") }}
