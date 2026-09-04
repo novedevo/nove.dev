@@ -37,6 +37,7 @@ menu_items = [
     # {name = "archive", url = "$BASE_URL/archive"},
     {name = "blogroll", url = "$BASE_URL/blogroll"},
     {name = "subdomains", url = "$BASE_URL/subs"},
+    {name = "hire me!", url = "$BASE_URL/resume"},
     
     {name = "github", url = "https://github.com/novedevo", newtab = true},
     # {name = "resume", url = "$BASE_URL/resume.pdf"},

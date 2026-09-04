@@ -1,14 +1,13 @@
 +++
 title = "on correctness"
 date = 2025-11-17T13:00:00-08:00
-# description = "and not for the reason you think"
 [extra]
 show_only_description = true
 [taxonomies]
 tags = ['polemic', 'software']
 +++
 
-correctness must be (normative) baseline in software. luckily, correctness is a mathematical property of an algorithm, and thus we can use computers to help humans build correct software. millions of lines of code have been written for the express purpose of helping humans prove subsets of correctness. i'm thinking of (ranked by how much assurance they provide, in decreasing order): formal verification, type systems, linters, property testing, unit testing, fuzzers, autoformatters, syntax highlighters.
+correctness should be the baseline in software. luckily, correctness is a mathematical property of an algorithm, and thus we can use computers to help humans build correct software. millions of lines of code have been written for the express purpose of helping humans prove subsets of correctness. i'm thinking of (ranked by how much assurance they provide, in decreasing order): formal verification, type systems, linters, property testing, unit testing, fuzzers, autoformatters, and syntax highlighters.
 
 ---
 

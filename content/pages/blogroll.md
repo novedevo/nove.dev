@@ -25,8 +25,8 @@ mostly these just go at the bottom of whatever post on my blog is most relevant,
 
 {{ <_88x31 src="/88x31/nove.dev.png" alt="nove.dev" dest="https://nove.dev"/> }}
 {{ <_88x31 src="/88x31/dreamy_button.gif" alt="dreamy.place" dest="https://dreamy.place"/> }}
-{{ <_88x31 src="/88x31/placeviolette@2x.png" alt="dreamy.place" dest="https://placeviolette.net"/> }}
-{{ <_88x31 src="/88x31/philo.png" alt="dreamy.place" dest="https://philo.gay"/> }}
-{{ <_88x31 src="/88x31/alyxv2.png" alt="dreamy.place" dest="https://alyx.sh"/> }}
+{{ <_88x31 src="/88x31/placeviolette@2x.png" alt="place violette" dest="https://placeviolette.net"/> }}
+{{ <_88x31 src="/88x31/philo.png" alt="philo spork" dest="https://philo.gay"/> }}
+{{ <_88x31 src="/88x31/alyxv2.png" alt="alyx" dest="https://alyx.sh"/> }}
 {{ <_88x31 src="/88x31/tested on firefox.gif" alt="tested on firefox" dest="https://firefox.com"/> }}
 {{ <_88x31 src="/88x31/cc-by-nc-sa.png" alt="cc-by-nc-sa" dest="https://creativecommons.org/licenses/by-nc-sa/4.0/"/> }}
