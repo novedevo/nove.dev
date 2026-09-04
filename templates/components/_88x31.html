@@ -1,0 +1,7 @@
+{% component _88x31(src, dest = "", alt = "", style = "") %}{% if dest %}<a href="{{ dest }}">{% endif %}<img {% if alt %}alt="{{ alt }}"{% endif %}
+    src="{{ src | safe }}"
+    style="display: inline{% if style %} {{ style | safe }}{% endif %}"
+    width=88
+    height=31
+    decoding="async"
+    loading="lazy"/>{% if dest %}</a>{% endif %}{% endcomponent _88x31 %}

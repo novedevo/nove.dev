@@ -27,8 +27,8 @@ trans rights, free palestine, blm, slava ukraini, eat the rich, etc.
 
 i use they/them pronouns. i consider myself nonbinary due to political beliefs and gender dysphoria. i think that human experience is better understood through a lens of multiple interacting agents than the myth of the unified self. a major facet of my internal experience is non-linguistic. in fewer words: we're lichen.
 
-{{ figure(src="/lobaria_pulmonaria.jpg",
-          caption="*Lobaria pulmonaria*, with *Polystichum munitum* backdrop") }}
+{{ <term.figure src="/lobaria_pulmonaria.jpg"
+          caption="*Lobaria pulmonaria*, with *Polystichum munitum* backdrop"/> }}
 
 ---
 
