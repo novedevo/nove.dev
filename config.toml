@@ -24,7 +24,6 @@ author = "devon sawatsky burnham"
 # terminimal config
 logo_text = "nove.dev"
 accent_color = "green-auto"
-background_color = "green"
 menu_items = [
     {name = "about", url = "$BASE_URL/about"},
     # each of these is optional, name and url are required
