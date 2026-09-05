@@ -6,7 +6,7 @@ path = "resume"
 *also available in pdf format. references available upon request*
 
 # Devon Sawatsky Burnham
-*[email](mailto:&#x72;&#x65;&#x73;&#x75;&#x6D;&#x65;&#x2E;&#x32;&#x30;&#x32;&#x36;&#x40;&#x6E;&#x6F;&#x76;&#x65;&#x2E;&#x64;&#x65;&#x76;) or [linkedin](https://www.linkedin.com/in/novedevo)*
+*Vancouver, Canada* | *[email](mailto:&#x72;&#x65;&#x73;&#x75;&#x6D;&#x65;&#x2E;&#x32;&#x30;&#x32;&#x36;&#x40;&#x6E;&#x6F;&#x76;&#x65;&#x2E;&#x64;&#x65;&#x76;) or [linkedin](https://www.linkedin.com/in/novedevo)*
 
 ## Summary
 I'm a highly motivated, skilled, and conscientious software developer. I care deeply about writing [correct](/blog/correctness), performant, maintainable code - leveraging tools to support this vision when humans fall short.
