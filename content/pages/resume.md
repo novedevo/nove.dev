@@ -12,15 +12,6 @@ path = "resume"
 I'm a highly motivated, skilled, and conscientious software developer. I care deeply about writing [correct](/blog/correctness), performant, maintainable code - leveraging tools to support this vision when humans fall short.
 
 ---
-## Skills
-- Languages
-    - Rust
-    - C#
-    - Python
-    - TypeScript
-<!-- soft skills, operations, communication, process -->
-
----
 ## Relevant Work Experience
 
 *__Software Engineer__ at __DraftKings__ - Aug. 2024 -> present*
@@ -35,10 +26,26 @@ I'm a highly motivated, skilled, and conscientious software developer. I care de
 ---
 ## Education
 
-I have a Bachelor of Science in Computing Science from Simon Fraser University. I graduated first class with distinction, plus a concentration in theoretical computing science. 
+I have a Bachelor of Science in Computing Science from Simon Fraser University. I graduated first class with distinction (summa cum laude), plus a concentration in theoretical computing science. I was consistently on the Dean's List and President's List
 
 I particularly enjoyed my classes in programming language design & compilers, computability & complexity, biomedical computing, and AI.
 
 ---
+## Skills
+
+Rust • C# • Python • TypeScript 
+
+**Technical**
+- Multithreaded & asynchronous programming
+- Performance optimization - throughput, latency, resource consumption
+- Legacy system modernization & refactoring
+- Developer tooling & DX
+
+**Interpersonal**
+- Cross-functional and cross-cultural communication
+- Crisis management
+- User empathy & understanding
+
+---
 ## Less Relevant Experience
-I worked at a bookstore for a year, and I spent a summer lifting things for a moving company. I have history writing Java, embedded and non-embedded C++, VHDL, and MATLAB. The first code I ever wrote was a mod to add a new ore to Minecraft when I was 12. I dabbled in circuits and electronics design, I've been a member of my community garden organization since I was 11, I go hiking and enjoy bird photography.
+I worked at a bookstore for a year, and I spent a summer lifting things for a moving company. I have history writing Java, embedded and non-embedded C++, VHDL, and MATLAB. The first code I ever wrote was a mod to add a new ore to Minecraft when I was 12. I dabbled in circuits and electronics design, I speak English (native) and French (barely), I've been a member of my community garden organization since I was 11, I go hiking and enjoy bird photography, I listen to industrial techno and read widely.
