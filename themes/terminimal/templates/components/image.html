@@ -1,4 +1,4 @@
-{% component term.image(src, position = "", alt = "", style = "") %}
+{% component terminimal.image(src, position = "", alt = "", style = "") %}
   {# If the image's URL is internal to the site... #}
   {% if src is not starting_with(pat="http") %}
     {# ... then prepend the site's base URL to the image's URL. #}
@@ -9,4 +9,4 @@
     class="{% if position %}{{ position }}{% else -%} center {%- endif %}"
     decoding="async"
     loading="lazy"/>
-{% endcomponent term.image %}
+{% endcomponent terminimal.image %}

@@ -1,4 +1,4 @@
-{% component term.head(config) %}
+open_graph{% component terminimal.head(config) %}
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="robots" content="noodp"/>
@@ -17,14 +17,14 @@
     <link rel="stylesheet" href="{{ get_url(path="font-hack-subset.css", trailing_slash=false) | safe }}">
 {% endif -%}
 
-{% endcomponent term.head %}
+{% endcomponent terminimal.head %}
 
 
 {# Extra Meta tags for OpenGraph and Twitter cards #}
-{% component open_graph(config) %}
+{% component open_graph(config, page, section, taxonomy, term) %}
 {%- if page %}
     {%- set permalink = page.permalink %}
-    {%- set title = <term.title page_title={page.title} main_title={config.title} config={config}/> %}
+    {%- set title = <terminimal.title page_title={page.title} main_title={config.title} config={config}/> %}
     {%- set description = page.description %}
     {%- set type = "article" %}
     {%- if page.extra and page.extra.og_image %}
@@ -38,7 +38,7 @@
     {%- endif %}
 {%- elif section %}
     {%- set permalink = section.permalink %}
-    {%- set title = <term.title page_title={section.title} main_title={config.title} config={config} /> %}
+    {%- set title = <terminimal.title page_title={section.title} main_title={config.title} config={config} /> %}
     {%- set description = section.description | default(value=config.description) %}
     {%- set type = "website" %}
     {%- if section.extra and section.extra.og_image %}
@@ -51,16 +51,16 @@
     {%- if taxonomy %}
         {% if term %}
             {%- set permalink = term.permalink %}
-            {%- set title = <term.title page_title={term.name} main_title={config.title} config={config} /> %}
+            {%- set title = <terminimal.title page_title={term.name} main_title={config.title} config={config} /> %}
             {%- set description = "All posts tagged " ~ term.name %}
         {% else %}
             {%- set permalink = config.base_url ~ "/" ~ taxonomy.slug %}
-            {%- set title = <term.title page_title={term.name} main_title={config.title} config={config} /> %}
+            {%- set title = <terminimal.title page_title="taxonomy" main_title={config.title} config={config} /> %}
             {%- set description = "All " ~ taxonomy.name %}
         {% endif %}
     {%- else %}
         {%- set permalink = config.base_url %}
-        {%- set title = <term.title page_title="404" main_title={config.title} config={config} /> %}
+        {%- set title = <terminimal.title page_title="404" main_title={config.title} config={config} /> %}
         {%- set description = "Page not found" %}
     {%- endif %}
     {%- set type = "website" %}

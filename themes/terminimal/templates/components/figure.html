@@ -1,4 +1,4 @@
-{% component term.figure(src, position="", alt = "", style = "", caption = "", caption_position = "", caption_style = "") %}
+{% component terminimal.figure(src, position="", alt = "", style = "", caption = "", caption_position = "", caption_style = "") %}
 <figure class="{% if position %}{{ position }}{% else -%} center {%- endif %}" >
   <img {% if alt %}alt="{{ alt }}"{% endif %}{% if style %}style="{{ style }}"{% endif %}
     src="{{ src | safe }}"
@@ -12,4 +12,4 @@
 </figcaption>
   {% endif %}
 </figure>
-{% endcomponent term.figure %}
+{% endcomponent terminimal.figure %}
