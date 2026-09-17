@@ -20,3 +20,5 @@ i spent a couple years in an engineering program at university. i have no miscon
 update 2025-11-18: i recently encountered this article from the acm, whose area is rather relevant to the subject at hand. [recommended reading](https://cacm.acm.org/opinion/software-professionals-malpractice-law-and-codes-of-ethics/)
 
 update 2026-01-19: found another [recommended post](https://alexwennerberg.com/blog/2025-11-28-engineering.html)!
+
+update 2026-01-19: i also like [rain's take](https://bsky.app/profile/sunshowers.io/post/3mvyv7xykvc2h); just because we aren't engineers doesn't mean we shouldn't act like them, and our obsession with building our own tools should be cherished
