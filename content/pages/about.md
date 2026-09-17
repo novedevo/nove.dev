@@ -5,7 +5,7 @@ path = "about"
 
 i'm devon, typically. i'm a software developer who works in various languages for fun and profit; see my [github](https://github.com/novedevo/) or [tangled](https://tangled.org/@nove.dev/) for some of my public projects. rust is preferred, but c# pays the bills. my collaborators generally find me pretty good at writing code.
 
-- correct, performant, soon: [pick all three or get none](https://loup-vaillant.fr/articles/good-fast-cheap/)
+- correct, performant, soon: [pick all three or get none](https://loup-vaillant.fr/articles/good-fast-cheap)
 - [parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [slocs are spent, not produced](https://www.cs.utexas.edu/~EWD/transcriptions/EWD10xx/EWD1036.html#:~:text=My%20point,ledger)
 - real 10x devs don't write much code
