@@ -3,6 +3,7 @@ title = "katamari architecture"
 date = 2026-09-23T21:30:00-07:00
 [extra]
 show_only_description = true
+og_image = "/katamari fortissimo damacy.jpg"
 [taxonomies]
 tags = ['software', 'llm', 'polemic']
 +++
