@@ -3,7 +3,7 @@ title = "Resume"
 path = "resume"
 +++
 
-*also available in pdf format. references available upon request*
+*also available in [pdf format](/resume.pdf). references available upon request*
 
 # Devon Sawatsky Burnham
 *Vancouver, Canada* | *[email](mailto:&#x72;&#x65;&#x73;&#x75;&#x6D;&#x65;&#x2E;&#x32;&#x30;&#x32;&#x36;&#x40;&#x6E;&#x6F;&#x76;&#x65;&#x2E;&#x64;&#x65;&#x76;) or [linkedin](https://www.linkedin.com/in/novedevo)*
@@ -26,7 +26,7 @@ I'm a highly motivated, skilled, and conscientious software developer. I care de
 ---
 ## Education
 
-I have a Bachelor of Science in Computing Science from Simon Fraser University. I graduated first class with distinction (summa cum laude), plus a concentration in theoretical computing science. I was consistently on the Dean's List and President's List
+I have a Bachelor of Science in Computing Science from Simon Fraser University. I graduated first class with distinction (summa cum laude), plus a concentration in theoretical computing science. I was consistently on the Dean's List and President's List.
 
 I particularly enjoyed my classes in programming language design & compilers, computability & complexity, biomedical computing, and AI.
 
