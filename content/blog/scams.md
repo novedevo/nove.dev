@@ -4,7 +4,7 @@ date = 2026-09-10T10:40:00-07:00
 [extra]
 show_only_description = true
 [taxonomies]
-tags = []
+tags = ["llm", "personal"]
 +++
 
 it's now roughly free to send a personalized, grammatically-perfect email from an account that seems to belong to a human. gone are the days where princes from a country on the other side of the world would drop apostrophes when trying to disburse millions of dollars to internet strangers. the most suspicious emails and texts we receive on a regular basis are legitimate communications from delivery companies attempting to coerce us to pay them for tariff paperwork. the old world is dying, and the new world struggles to be born.
