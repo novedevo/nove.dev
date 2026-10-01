@@ -67,8 +67,10 @@
 {% endcomponent earlier_later %}
 
 
-{% component header(page) %}
+{% component header(page) %} 
+    {%- if page.title %}
     <h1 class="post-title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h1>
+    {% endif %}
     <div class="post-meta-inline">
         {{ <post_date page={page} /> }}
     </div>

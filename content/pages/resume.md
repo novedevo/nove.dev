@@ -1,15 +1,14 @@
 +++
-title = "Resume"
 path = "resume"
 +++
 
-*also available in [pdf format](/resume.pdf). references available upon request*
+<p class="no-print"><em>also available in <a href="/resume.pdf">pdf format</a>. references available upon request</em></p>
 
 # Devon Sawatsky Burnham
 *Vancouver, Canada* | *[email](mailto:&#x72;&#x65;&#x73;&#x75;&#x6D;&#x65;&#x2E;&#x32;&#x30;&#x32;&#x36;&#x40;&#x6E;&#x6F;&#x76;&#x65;&#x2E;&#x64;&#x65;&#x76;) or [linkedin](https://www.linkedin.com/in/novedevo)*
 
 ## Summary
-I'm a highly motivated, skilled, and conscientious software developer. I care deeply about writing [correct](/blog/correctness), performant, maintainable code - leveraging tools to support this vision when humans fall short.
+I'm a highly motivated, skilled, and conscientious software developer. I care deeply about writing <a href="/blog/correctness" class=no-print>correct</a><span class=print>correct</span>, performant, maintainable code - leveraging tools to support this vision when humans fall short.
 
 ---
 ## Relevant Work Experience
