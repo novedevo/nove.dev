@@ -14,7 +14,10 @@ I'm a highly motivated, skilled, and conscientious software developer. I care de
 ## Relevant Work Experience
 
 *__Software Engineer__ at __DraftKings__ - Aug. 2024 -> present*
-- Designed, delivered, and maintained critical, high-performance, distributed Rust and C# ETL services in the core data pipeline with Kafka and ASP.NET
+- Optimized and expanded a central calculation library through its transition from C# to Rust
+- Designed, delivered, and maintained distributed C# ETL services in the core data pipeline with Kafka and ASP.NET
+- Mentored new hires and other coworkers as a Rust subject-matter expert
+- Held on-call responsibility for revenue-critical systems, responding to incidents and fixing production
 
 *__Full Stack Software Developer__ at __Sports IQ Analytics__ - Sept. 2021 -> Aug. 2024*
 - Built & fixed web-based backend tools in Rust and Node.js - greenfield and brownfield
@@ -25,26 +28,31 @@ I'm a highly motivated, skilled, and conscientious software developer. I care de
 ---
 ## Education
 
-I have a Bachelor of Science in Computing Science from Simon Fraser University. I graduated first class with distinction (summa cum laude), plus a concentration in theoretical computing science. I was consistently on the Dean's List and President's List.
+I have a Bachelor of Science in Computing Science from Simon Fraser University (2023). I graduated first class with distinction (summa cum laude), plus a concentration in theoretical computing science. I was consistently on the Dean's List and President's List.
 
 I particularly enjoyed my classes in programming language design & compilers, computability & complexity, biomedical computing, and AI.
 
 ---
 ## Skills
 
-Rust • C# • Python • TypeScript 
+Rust • C# • Python • TypeScript / JavaScript
 
 **Technical**
 - Multithreaded & asynchronous programming
 - Performance optimization - throughput, latency, resource consumption
+- Low-level, unsafe code; FFI; ABI considerations
 - Legacy system modernization & refactoring
-- Developer tooling & DX
+- Developer tooling & DX; CI/CD & DevOps
 
 **Interpersonal**
+- Conflict resolution & compromise
 - Cross-functional and cross-cultural communication
-- Crisis management
+- Crisis management in high-stress situations
 - User empathy & understanding
 
 ---
+
+<div class="page-break"></div>
+
 ## Less Relevant Experience
-I worked at a bookstore for a year, and I spent a summer lifting things for a moving company. I have history writing Java, embedded and non-embedded C++, VHDL, and MATLAB. The first code I ever wrote was a mod to add a new ore to Minecraft when I was 12. I dabbled in circuits and electronics design, I speak English (native) and French (barely), I've been a member of my community garden organization since I was 11, I go hiking and enjoy bird photography, I listen to industrial techno and read widely.
+I worked at a bookstore for a year, and I spent a summer lifting things for a moving company. I have history writing Java, embedded and non-embedded C++, VHDL, and MATLAB. I started coding when I was 12. I've dabbled in circuits and electronics design, I speak English (native) and French (barely), I've been a member of my community garden organization since I was 11, I go hiking and enjoy bird photography, I listen to industrial techno and read widely.

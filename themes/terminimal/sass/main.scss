@@ -244,6 +244,9 @@ ol ol {
 
 .container {
   display: flex;
+  @media print {
+    display: block;
+  }
   flex-direction: column;
   padding: 40px;
   max-width: 864px;
@@ -261,6 +264,9 @@ ol ol {
 
 .content {
   display: flex;
+  @media print {
+    display: block;
+  }
 }
 
 hr {
@@ -292,4 +298,5 @@ hr {
     {
         display: inline !important;
     }
+    .page-break { break-after: page; }
 }
