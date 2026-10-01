@@ -22,7 +22,7 @@ I'm a highly motivated, skilled, and conscientious software developer. I care de
 *__Full Stack Software Developer__ at __Sports IQ Analytics__ - Sept. 2021 -> Aug. 2024*
 - Built & fixed web-based backend tools in Rust and Node.js - greenfield and brownfield
 - Created & promoted the company's first continuous integration pipeline with CircleCI
-- Deployed and maintained tools in a Google Cloud environment
+- Deployed and maintained tools in a Google Cloud environment with Kubernetes
 - Started as a co-op student (intern), consistently promoted to reach the full-stack developer title
 
 ---
