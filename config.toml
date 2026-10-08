@@ -2,13 +2,12 @@
 base_url = "https://nove.dev"
 title = "nove.dev"
 description = "devon's personal website"
+author = "devon sawatsky burnham"
 
 compile_sass = true
 build_search_index = false
 theme = "terminimal"
-taxonomies = [
-    {name = "tags"}
-]
+taxonomies = [{ name = "tags" }]
 generate_feeds = true
 default_language = "en-CA"
 
@@ -25,21 +24,21 @@ author = "devon sawatsky burnham"
 logo_text = "nove.dev"
 accent_color = "green-auto"
 menu_items = [
-    {name = "about", url = "$BASE_URL/about"},
+    { name = "about", url = "$BASE_URL/about" },
     # each of these is optional, name and url are required
     # $BASE_URL is going to be substituted by base_url from configuration
-    {name = "blog", url = "$BASE_URL/blog"},
-    
+    { name = "blog", url = "$BASE_URL/blog" },
+
     # tags should only be enabled if you have "tags" taxonomy
     # see documentation below for more details
-    {name = "blogtags", url = "$BASE_URL/tags"},
-    # {name = "archive", url = "$BASE_URL/archive"},
-    {name = "blogroll", url = "$BASE_URL/blogroll"},
-    {name = "subdomains", url = "$BASE_URL/subs"},
-    {name = "hire me!", url = "$BASE_URL/resume"},
-    
-    {name = "github", url = "https://github.com/novedevo", newtab = true},
-    # {name = "resume", url = "$BASE_URL/resume.pdf"},
+    { name = "blogtags", url = "$BASE_URL/tags" },
+    # { name = "archive", url = "$BASE_URL/archive" },
+    { name = "blogroll", url = "$BASE_URL/blogroll" },
+    { name = "subdomains", url = "$BASE_URL/subs" },
+    { name = "hire me!", url = "$BASE_URL/resume" },
+
+    { name = "github", url = "https://github.com/novedevo", newtab = true },
+    # { name = "resume", url = "$BASE_URL/resume.pdf "},
 ]
 enable_post_view_navigation = true
 post_view_navigation_prompt = "Read more"
