@@ -31,3 +31,4 @@ mostly these just go at the bottom of whatever post on my blog is most relevant,
 {{ <_88x31 src="/88x31/alyxv2.png" alt="alyx" dest="https://alyx.sh"/> }}
 {{ <_88x31 src="/88x31/tested on firefox.gif" alt="tested on firefox" dest="https://firefox.com"/> }}
 {{ <_88x31 src="/88x31/cc-by-nc-sa.png" alt="cc-by-nc-sa" dest="https://creativecommons.org/licenses/by-nc-sa/4.0/"/> }}
+{{ <_88x31 src="/88x31/valid-atom.png" alt="valid atom" dest="https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fnove.dev"/> }}
